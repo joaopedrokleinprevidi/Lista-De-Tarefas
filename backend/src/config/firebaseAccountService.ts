@@ -1,0 +1,38 @@
+import  admin  from 'firebase-admin';
+import { getFirestore } from 'firebase-admin/firestore'
+
+import { config } from 'dotenv'
+
+
+//Testar arquivo
+//Testar path abaixo do dotenv.config()
+config({
+    path: "src/config/.env"
+})
+
+console.log(process.env)
+
+interface IServiceAccount {
+}
+
+const serviceAccount: IServiceAccount = {
+    type: process.env.TYPE,
+    project_id: process.env.PROJECT_ID,
+    private_key_id: process.env.PRIVATE_KEY_ID,
+    private_key: process.env.PRIVATE_KEY,
+    client_email: process.env.CLIENT_EMAIL,
+    client_id: process.env.CLIENT_ID,
+    auth_uri: process.env.AUTH_URI,
+    token_uri: process.env.TOKEN_URI,
+    auth_provider_x509_cert_url: process.env.AUTH_PROVIDER_URL,
+    client_x509_cert_url: process.env.CLIENT_URL,
+    universe_domain: process.env.UNIVERSE_DOMAIN,
+}
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+const database = getFirestore();
+
+export default database;
