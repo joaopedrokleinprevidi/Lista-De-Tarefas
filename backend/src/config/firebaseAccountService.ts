@@ -7,10 +7,8 @@ import { config } from 'dotenv'
 //Testar arquivo
 //Testar path abaixo do dotenv.config()
 config({
-    path: "src/config/.env"
+  path: "src/config/.env"
 })
-
-console.log(process.env)
 
 interface IServiceAccount {
 }

@@ -14,9 +14,9 @@
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-# <h1 align="center" style="font-size: 3rem; margin-bottom: 3rem;"> &copy; Maximum <p style="font-size: 1rem;"> Juntos com você até o fim. </p></h1>
+# <h1 align="center" style="font-size: 3rem;"> &copy; Maximum <p style="font-size: 1rem;"> Juntos com você até o fim. </p></h1>
 
-## <p align="center" style="margin-bottom: 1rem;">Com qual propósito o Maximum foi criado?</p>
+## <p align="center" style="margin-top: 4rem;">Com qual propósito o Maximum foi criado?</p>
 
 -   #### Buscando fixar conhecimentos nas respectivas tecnologias utilizadas para o seu desenvolvimento.
 -   #### Facilitar a criação de hábitos.
@@ -25,7 +25,7 @@
 -   #### Tornar a evolução como ser humano algo mais "visual e interativo".
 -   #### Facilitar os processos do dia-a-dia.
 
-## <p align="center" style="margin-top: 4rem;">Quais tecnologias estão sendo usadas no desenvolvimento do Maximum?</p>
+## <p align="center" style="margin-top: 5rem;">Quais tecnologias estão sendo usadas no desenvolvimento do Maximum?</p>
 
 ### Front-End
 
@@ -45,6 +45,7 @@
 -   NPM
 -   Express
 -   Firebase Admin
+-   Firebase Cloud Firestore (Banco de Dados)
 -   Dotenv
 
 ### Ferramentas
@@ -54,7 +55,7 @@
 -   Vite
 -   Eslint
 
-## <p style="margin-top: 4rem;">Funcionalidades do App</p>
+## <p style="margin-top: 5rem;">Funcionalidades do App</p>
 
 ### Autenticação
 
@@ -69,7 +70,7 @@
 -   Editar tarefa
 -   Excluir tarefa
 
-## <p style="margin-top: 4rem;">Estrutura do Banco De Dados (Firebase Cloud Firestore)</p>
+## <p style="margin-top: 5rem;">Estrutura do Banco De Dados (Firebase Cloud Firestore)</p>
 
 ### Sequência Lógica (Resumo)
 
@@ -97,11 +98,11 @@ ____Listas
     |       |
     |       |
     |       |_____Tarefa-Y
-    |              |__Name: sair de casa
-    |              |__Color:
-    |              |__Description:
-    |              |__Created_at:
-    |              |__Conclusion_at:
+    |              |__Name: "Reunião"
+    |              |__Color: "Blue"
+    |              |__Description: "Conversar com a equipe para aumentar as metas semanais."
+    |              |__Created_at: "10/05/24"
+    |              |__Conclusion_at: "11/05/24"
     |              |__Value: ""
     |              |__Checked: true
     |
@@ -114,7 +115,7 @@ ____Listas
 
 ### 1. O que um usuário pode inserir em uma única tarefa?
 
-#### A tarefa é composta por alguns valores, sendo alguns deles opcionais, e outros atribuídos automaticamente.
+#### A tarefa é composta por alguns atributos, sendo alguns deles opcionais, e outros atribuídos automaticamente. Conheça cada um deles abaixo.
 
 -   Nome: O nome que o usuário atribuiu a tarefa.
 -   Criado em: Informa quando a tarefa foi criada. Ajuda a manter uma coêrencia na sequência das tarefas. _( Atribuído automaticamente )_
@@ -130,9 +131,9 @@ ____Listas
 ```bash
 Tarefa X {
 
-    Name: "Comprar presente para a minha filha."
+    Name: "Comprar um presente para a minha filha."
     Color: "Rosa"
-    Description: "Maria está de aniversário nesta semana, preciso passar na loja de brinquedos e comprar uma boneca para ela"
+    Description: "Preciso comprar uma boneca para ela urgentemente! Terça é seu aniversário!"
     Created_at: "05/05/24"
     Conclusion_at: "11/05/24"
     Value: "250R$"
@@ -140,4 +141,4 @@ Tarefa X {
  }
 ```
 
-## Contribuídores
+## <p style="margin-top: 5rem;">Contribuídores</p>
