@@ -1,42 +1,16 @@
-// export const create = async (attributes) => {
-//     const { name, description, created_at, conclusion_at, value } = attributes;
+import { ITask } from "../../../@types";
+import { database } from "../../../config/firebaseAccountService"
 
-//     const createListRef = database.collections('')
+export const createTask = async (data: ITask) => {
 
-// } 
+    try {
+        const { UserID } = data;
+      
+        await database.collection(UserID).add(data.Task)  
+    }
 
-//Firebase Cloud Firestore
-/* 
+    catch {
+        throw new Error('Runtime error in function "createTask()" in "ListItemModel"')
+    }
 
-COLEÇÃO === PASTA
-DOCUMENTO === ARQUIVO
-
-
-COLEÇÃO 
-
-
-
-__firebase 
-  |__tarefas - COLEÇÃO
-     |
-     |__ColeçaoDeTarefasDoUsuarioEspecíficoX ( UID DO USUÁRIO ) - DOCUMENTO
-     |  |
-     |  |
-     |  |
-     |  |__tarefa1 ( ID ALEATÓRIO . E BUSCAR ESSE ID ALEATÓRIO)
-     |  |  |__nome: sair de casa
-     |  |  |__conclusion_at: tal dia
-     |  |  |__created_at: tal dia
-     |  |  |__value: opcional
-     |  |  |__checked: false
-     |  |
-     |  |
-     |  |__tarefa2 ( ID ALEATÓRIO . E BUSCAR ESSE ID ALEATÓRIO)
-     |  |  |__nome: comer no restaurante
-     |  |  |__conclusion_at: tal dia
-     |  |  |__created_at: tal dia
-     |  |  |__value: opcional
-     |  |  |__checked: false
-     |
-
-*/
+ }
