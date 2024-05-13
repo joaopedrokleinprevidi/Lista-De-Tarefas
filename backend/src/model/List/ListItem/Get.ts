@@ -1,7 +1,7 @@
 import { ITask } from "../../../@types"
 import { database } from "../../../config/firebaseAccountService"
 
-export const getTask = async (data: ITask) => {
+export const ModelGetTask = async (data: ITask) => {
     
     try {
         const { UserID } = data
@@ -10,7 +10,7 @@ export const getTask = async (data: ITask) => {
     }
 
     catch {
-        throw new Error('Runtime error in function "getTask()" in "ListItemModel"')
+        throw new Error('Runtime error in function "ModelGetTask()" in "Backend >> Model >> ListItem >> Get.ts"')
     }
 
 }

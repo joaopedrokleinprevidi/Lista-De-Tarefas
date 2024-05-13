@@ -1,7 +1,7 @@
 import { ITask } from "../../../@types"
 import { database } from "../../../config/firebaseAccountService"
 
-export const deleteTask = async (data: ITask) => {
+export const ModelDeleteTask = async (data: ITask) => {
 
     try {
         const { UserID } = data
@@ -10,7 +10,7 @@ export const deleteTask = async (data: ITask) => {
     }
     
     catch {
-        throw new Error('Runtime error in function "deleteTask()" in "ListItemModel"')
+        throw new Error('Runtime error in function "ModelDeleteTask()" in "Backend >> Model >> ListItem >> Delete.ts"')
     }
 
 }
