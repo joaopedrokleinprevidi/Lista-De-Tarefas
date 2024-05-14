@@ -5,9 +5,20 @@ const router = express.Router();
 
 
 //Controllers aqui
-import { usersController } from './controllers/UsersController';
+import { UsersController, ListController } from './controllers/';
 
 //Routers e methods aqui
-router.post('/auth/signUp', usersController.createUser)
+router.post('/auth/signUp', UsersController.CreateNewUser)
+
+router.post('/tasks/create', ListController.CreateTask)
+
+// router.delete('/tasks/delete', ListController.DeleteTask)
+
+// router.put('/tasks/update', ListController.UpdateTask)
+
+// router.get('/tasks/get', ListController.GetTask)
+
+// router.get('/tasks/getAll', ListController.GetAllTasks)
+
 
 export default router;

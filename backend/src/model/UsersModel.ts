@@ -1,7 +1,7 @@
 import { getAuth } from 'firebase-admin/auth'
-import { ICreateUser } from '../../@types';
+import { ICreateUser } from '../@types';
 
-export const CreateNewUserModel = async ({userEmail, userPassword}: ICreateUser) => {
+export const ModelCreateNewUser = async ({userEmail, userPassword}: ICreateUser) => {
     getAuth()
     //Cria um novo usuário com o Firebase Authentication.
     //Espera receber email and password do /Controller.

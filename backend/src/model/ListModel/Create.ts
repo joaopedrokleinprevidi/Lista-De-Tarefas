@@ -1,5 +1,5 @@
-import { ITask } from "../../../@types";
-import { database } from "../../../config/firebaseAccountService"
+import { ITask } from "../../@types";
+import { database } from "../../config/firebaseAccountService"
 
 export const ModelCreateTask = async (data: ITask) => {
 
