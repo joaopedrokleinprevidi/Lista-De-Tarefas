@@ -12,7 +12,7 @@ router.post('/auth/signUp', UsersController.CreateNewUser)
 
 router.post('/tasks/create', ListController.CreateTask)
 
-// router.delete('/tasks/delete', ListController.DeleteTask)
+router.delete('/tasks/delete', ListController.DeleteTask)
 
 // router.put('/tasks/update', ListController.UpdateTask)
 
