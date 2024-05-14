@@ -74,7 +74,7 @@
 
 ### Sequência Lógica (Resumo)
 
-1.  Listas: Aonde ficarão todas as Listas do Maximum.
+1.  Banco-De-Dados: Aonde ficarão todas as Listas do Maximum.
 2.  Lista-Do-Usuário-X: Lista de tarefa própria do usuário, aonde apenas ele tem 'acesso'.
 3.  Tarefa-X: Responsável por guardar os dados de cada tarefa.
 4.  Dados da Tarefa 'X': Auto explicativo. São os dados da tarefa.
@@ -82,7 +82,7 @@
 ### Na prática
 
 ```bash
-____Listas
+____Banco-De-Dados
     |
     |
     |______Lista-Do-Usuario-X

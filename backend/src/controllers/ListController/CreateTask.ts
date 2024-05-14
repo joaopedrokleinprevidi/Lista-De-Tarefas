@@ -5,16 +5,6 @@ import { Request, Response } from 'express'
 export const ControllerCreateTask = async (request: Request, response: Response) => {
     
     try {
-        // const { UserID, Task } = request.body
-
-        // console.log("Expected UserID: ", UserID)
-        // console.log("Expected Task: ", Task)
-
-        // const expectedObject: ITask = {
-        //     UserID,
-        //     Task
-        // }
-
         await ListModel.CreateTask(request.body)
         response.status(201).json({ message: 'Task created successfully.' })
     }

@@ -5,7 +5,14 @@ import { database } from "../../config/firebaseAccountService"
 export const ModelGetAllTasks = async ({UserID}: IUserID) => {
 
     try {
-        await database.collection(UserID).get()
+        const snapshot = await database.collection(UserID).get()
+
+        const tasks = snapshot.docs.map((doc) => ({
+            uid: doc.id,
+            ...doc.data(),
+          }));
+
+        return tasks
     }
 
     catch {

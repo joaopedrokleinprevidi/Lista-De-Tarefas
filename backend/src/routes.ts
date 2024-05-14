@@ -18,7 +18,7 @@ router.post('/tasks/create', ListController.CreateTask)
 
 // router.get('/tasks/get', ListController.GetTask)
 
-// router.get('/tasks/getAll', ListController.GetAllTasks)
+router.get('/tasks/getAll', ListController.GetAllTasks)
 
 
 export default router;
