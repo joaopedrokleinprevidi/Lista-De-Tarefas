@@ -13,6 +13,7 @@ export const ModelCheckAllTasks = async ({UserID}: IUserID) => {
             dynamicBoolean = true
         }
 
+        //"runTransaction" responsável por atualização em massa de documentos
         await database.runTransaction(async (transition) => {
             //Pega todos documentos (todas tarefas do usuário)
             const reference = await database.collection(UserID).get()
