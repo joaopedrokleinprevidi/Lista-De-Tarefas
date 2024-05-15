@@ -1,24 +1,23 @@
 import express from 'express';
 const router = express.Router();
 
-//Middlewares aqui
+import { AuthMiddleware } from './middlewares/authMiddleware';
 
-
-//Controllers aqui
 import { UsersController, ListController } from './controllers/';
 
-//Routers e methods aqui
-router.post('/auth/signUp', UsersController.CreateNewUser)
+//Authentication
+router.post('/auth/signUp',  UsersController.CreateNewUser)
 
-router.post('/tasks/create', ListController.CreateTask)
+//Tasks
+router.get('/tasks/getAll', AuthMiddleware.VerifyUser, ListController.GetAllTasks)
 
-router.delete('/tasks/delete', ListController.DeleteTask)
+router.post('/tasks/create', AuthMiddleware.VerifyUser, ListController.CreateTask)
 
-router.put('/tasks/check', ListController.CheckAllTasks)
+router.delete('/tasks/delete', AuthMiddleware.VerifyUser, ListController.DeleteTask)
 
-router.put('/tasks/update', ListController.UpdateTask)
+router.put('/tasks/update', AuthMiddleware.VerifyUser, ListController.UpdateTask)
 
-router.get('/tasks/getAll', ListController.GetAllTasks)
+router.put('/tasks/check', AuthMiddleware.VerifyUser, ListController.CheckAllTasks)
 
 
 export default router;
