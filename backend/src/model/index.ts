@@ -1,4 +1,4 @@
-import { ModelCreateTask, ModelDeleteTask, ModelGetTask, ModelUpdateTask } from './ListModel'
+import { ModelCreateTask, ModelDeleteTask, ModelUpdateTask } from './ListModel'
 import { ModelGetAllTasks } from './ListModel/GetAllTasks'
 
 import { ModelCreateNewUser } from './UsersModel'
@@ -7,7 +7,6 @@ import { ModelCreateNewUser } from './UsersModel'
 export const ListModel = {
     CreateTask: ModelCreateTask,
     DeleteTask: ModelDeleteTask,
-    GetTask: ModelGetTask,
     GetAllTasks: ModelGetAllTasks,
     UpdateTask: ModelUpdateTask
 }

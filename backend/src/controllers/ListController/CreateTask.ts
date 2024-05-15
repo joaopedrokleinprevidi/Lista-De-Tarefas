@@ -1,4 +1,3 @@
-// import { ITask } from "../../@types"
 import { ListModel } from "../../model"
 import { Request, Response } from 'express'
 

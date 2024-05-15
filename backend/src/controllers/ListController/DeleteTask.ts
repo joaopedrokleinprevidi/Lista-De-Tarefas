@@ -5,7 +5,7 @@ export const ControllerDeleteTask = async (request: Request, response: Response)
     
     try {
         await ListModel.DeleteTask(request.body)
-        response.status(200).json({ message: "Task deleted sucessfuly." })
+        response.status(200).json({ message: "Task deleted successfully." })
     }
 
     catch {

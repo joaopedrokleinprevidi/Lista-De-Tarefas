@@ -1,12 +1,11 @@
-import { ITask } from "../../@types"
+import { IUpdateTask } from "../../@types"
 import { database } from "../../config/firebaseAccountService"
 
-export const ModelUpdateTask = async (data: ITask, newData: any) => {
+export const ModelUpdateTask = async (data: IUpdateTask) => {
     
     try {
-        const { UserID } = data
 
-        await database.collection(UserID).doc(data.Task.ID).update(newData)
+        await database.collection(data.UserID).doc(data.Task.ID).update(data.NewTask)
     }
 
     catch {

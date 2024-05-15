@@ -3,11 +3,11 @@ export interface ITask {
     Task: {
       ID: string,
       Name: string,
-      Color: string,  
-      Description: string,
+      Color?: string,  
+      Description?: string,
       Created_at: string,
-      Conclusion_at: string,
-      Value: string,
+      Conclusion_at?: string,
+      Value?: string,
       Checked: boolean
     }
 
