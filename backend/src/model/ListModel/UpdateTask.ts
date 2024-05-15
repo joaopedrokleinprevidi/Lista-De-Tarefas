@@ -9,7 +9,7 @@ export const ModelUpdateTask = async (data: IUpdateTask) => {
     }
 
     catch {
-        throw new Error('Runtime error in function "ModelUpdateTask()" in "Backend >> Model >> ListItem >> Update.ts"')
+        throw new Error('Runtime error in function "ModelUpdateTask()" in "Backend >> Model >> ListItem >> UpdateTask.ts"')
     }
 
 }

@@ -10,7 +10,7 @@ export const ModelCreateTask = async (data: ITask) => {
     }
 
     catch {
-        throw new Error('Runtime error in function "ModelCreateTask()" in "Backend >> Model >> ListItem >> Create.ts"')
+        throw new Error('Runtime error in function "ModelCreateTask()" in "Backend >> Model >> ListItem >> CreateTask.ts"')
     }
 
  }

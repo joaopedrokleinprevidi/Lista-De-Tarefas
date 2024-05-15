@@ -11,7 +11,7 @@ export const ModelDeleteTask = async (data: ITask) => {
     }
     
     catch {
-        throw new Error('Runtime error in function "ModelDeleteTask()" in "Backend >> Model >> ListItem >> Delete.ts"')
+        throw new Error('Runtime error in function "ModelDeleteTask()" in "Backend >> Model >> ListItem >> DeleteTask.ts"')
     }
 
 }

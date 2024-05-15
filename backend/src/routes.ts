@@ -14,6 +14,8 @@ router.post('/tasks/create', ListController.CreateTask)
 
 router.delete('/tasks/delete', ListController.DeleteTask)
 
+router.put('/tasks/check', ListController.CheckAllTasks)
+
 router.put('/tasks/update', ListController.UpdateTask)
 
 router.get('/tasks/getAll', ListController.GetAllTasks)
