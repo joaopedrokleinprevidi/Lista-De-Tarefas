@@ -1,23 +1,32 @@
-import express from 'express';
-const router = express.Router();
+import express from "express"
 
-import { AuthMiddleware } from './middlewares/authMiddleware';
+import { AuthMiddleware } from "./middlewares/authMiddleware"
 
-import { UsersController, ListController } from './controllers/';
+import {
+    CreateTaskController,
+    DeleteTaskController,
+    GetAllTasksController,
+    UpdateTaskController,
+    CheckAllTasksController,
+    UncheckAllTasksController 
+} from "./modules/controllers/TaskControllers"
 
-//Authentication
-router.post('/auth/signUp',  UsersController.CreateNewUser)
+import { CreateUserController } from "./modules/controllers/UserControlles"
 
-//Tasks
-router.get('/tasks/getAll', AuthMiddleware.VerifyUser, ListController.GetAllTasks)
+const router = express.Router()
 
-router.post('/tasks/create', AuthMiddleware.VerifyUser, ListController.CreateTask)
+router.post("/auth/signUp", CreateUserController)
 
-router.delete('/tasks/delete', AuthMiddleware.VerifyUser, ListController.DeleteTask)
+router.get("/tasks/getAll", GetAllTasksController)
 
-router.put('/tasks/update', AuthMiddleware.VerifyUser, ListController.UpdateTask)
+router.post("/tasks/create", CreateTaskController)
 
-router.put('/tasks/check', AuthMiddleware.VerifyUser, ListController.CheckAllTasks)
+router.delete("/tasks/delete", AuthMiddleware.VerifyUser, DeleteTaskController)
 
+router.put("/tasks/update", AuthMiddleware.VerifyUser, UpdateTaskController)
+
+router.put("/tasks/checkAll", AuthMiddleware.VerifyUser, CheckAllTasksController)
+
+router.put("/tasks/uncheckAll", AuthMiddleware.VerifyUser, UncheckAllTasksController)
 
 export default router;
