@@ -1,3 +1,4 @@
-export * from "./domain"
-export * from "./models"
-export * from "./services"
+export * from './List/ITask'
+export * from './User/ICreateUser'
+export * from './User/IUserID'
+export * from './List/IUpdateTask'
