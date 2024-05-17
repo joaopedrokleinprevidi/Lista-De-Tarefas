@@ -35,17 +35,18 @@ router.put("/tasks/uncheckAll", AuthMiddleware.VerifyUser, UncheckAllTasksContro
 
 import { validateFields } from "./services/joiValidation/JoiLibrary"
 // import { loginSchema } from "./services/joiValidation/schemas/SchemaValidationLogin"
-import { registerSchema } from "./services/joiValidation/schemas/SchemaValidationRegister"
+// import { registerSchema } from "./services/joiValidation/schemas/SchemaValidationRegister"
+import { taskSchema } from "./services/joiValidation/schemas/SchemaValidationTasks"
 
 router.post("/teste", (req, res) => {
 
-    const responseValidate = validateFields(registerSchema, req.body)
+    const responseValidate = validateFields(taskSchema, req.body)
 
     if (responseValidate === undefined){
-        res.status(200).json({ "message": "Erros encontrados", "validationResponse": `${responseValidate}` })
+        res.status(200).json({ "message": "Tudo certo.", "validationResponse": `${responseValidate}` })
     }
     else {
-        res.status(422).json({ "message": "Tudo certo.", "validationResponse": `${responseValidate}`})
+        res.status(422).json({ "message": "Erros encontrados", "validationResponse": `${responseValidate}`})
     }
 })
 
