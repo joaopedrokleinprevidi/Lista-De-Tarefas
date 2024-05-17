@@ -60,9 +60,10 @@
 
 ### Autenticação
 
--   Registrar um usuário ( SignUp / Register )
--   Entrar na plataforma como um usuário ( SignIn / Login )
--   Recuperar conta ( Esqueci a senha? )
+-   Registrar uma conta ( SignUp / Register )
+-   Entrar em uma conta ( SignIn / Login )
+-   Alterar a senha ( Confirmação por E-mail )
+-   Esqueci a senha ( Confirmação por E-mail )
 
 ### Gerenciamento
 
@@ -70,6 +71,19 @@
 -   Completar tarefa
 -   Editar tarefa
 -   Excluir tarefa
+-   Buscar tarefa específica ( Filtrar )
+
+-   Marcar todas tarefas como concluídas em um clique
+-   Marcar todas tarefas como NÃO concluídas em um clique
+
+-   Escolher ordenar as tarefas em ordem de criação ou por categorias
+
+-   Criar categoria
+-   Editar categoria
+-   Excluir categoria
+-   Atribuir categoria a tarefa
+-   Remover categoria da tarefa
+-   Filtrar por categorias
 
 ## <p style="margin-top: 5rem;">Estrutura do Banco De Dados (Firebase Cloud Firestore)</p>
 
