@@ -14,11 +14,12 @@
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-# <h1 align="center" style="font-size: 3rem;"> &copy; Maximum <p style="font-size: 1rem;"> Juntos com você até o fim. </p></h1>
+# <h1 align="center" style="font-size: 3rem;"> &copy; Maximum! <p style="font-size: 1rem;"> Juntos com você até o fim. </p></h1>
 
 ## <p align="center" style="margin-top: 4rem;">Com qual propósito o Maximum foi criado?</p>
 
 -   #### Buscando fixar conhecimentos nas respectivas tecnologias utilizadas para o seu desenvolvimento.
+-   #### Aprimorar Softs Skills e conhecimentos como Clean Architecture, Clean Code, Code Design, TDD, GitFlow e CI/CD.
 -   #### Facilitar a criação de hábitos.
 -   #### Prover organização aos usuários.
 -   #### Ajudar o usuário a não esquecer de realizar suas tarefas.
@@ -46,6 +47,7 @@
 -   Express
 -   Firebase Admin
 -   Firebase Cloud Firestore (Banco de Dados)
+-   Joi
 -   Dotenv
 
 ### Ferramentas
@@ -59,9 +61,10 @@
 
 ### Autenticação
 
--   Registrar um usuário ( SignUp / Register )
--   Entrar na plataforma como um usuário ( SignIn / Login )
--   Recuperar conta ( Esqueci a senha? )
+-   Registrar uma conta ( SignUp / Register )
+-   Entrar em uma conta ( SignIn / Login )
+-   Alterar a senha ( Confirmação por E-mail )
+-   Esqueci a senha ( Confirmação por E-mail )
 
 ### Gerenciamento
 
@@ -69,6 +72,19 @@
 -   Completar tarefa
 -   Editar tarefa
 -   Excluir tarefa
+-   Buscar tarefa específica ( Filtrar )
+
+-   Marcar todas tarefas como concluídas em um clique
+-   Marcar todas tarefas como NÃO concluídas em um clique
+
+-   Escolher ordenar as tarefas em ordem de criação ou por categorias
+
+-   Criar categoria
+-   Editar categoria
+-   Excluir categoria
+-   Atribuir categoria a tarefa
+-   Remover categoria da tarefa
+-   Filtrar por categorias
 
 ## <p style="margin-top: 5rem;">Estrutura do Banco De Dados (Firebase Cloud Firestore)</p>
 
@@ -118,12 +134,11 @@ ____Banco-De-Dados
 #### A tarefa é composta por alguns atributos, sendo alguns deles opcionais, e outros atribuídos automaticamente. Conheça cada um deles abaixo.
 
 -   Nome: O nome que o usuário atribuiu a tarefa.
--   Criado em: Informa quando a tarefa foi criada. Ajuda a manter uma coêrencia na sequência das tarefas. _( Atribuído automaticamente )_
+-   Criado em: Informa quando a tarefa foi criada. Ajuda a manter uma coêrencia na sequência das tarefas. ( Atribuído automaticamente )
 
--   Cor: Permite separar tarefas por categorias específicas. _( Opcional )_
--   Descrição: Uma descrição detalhada sobre oque deve ser realizado na tarefa. _( Opcional )_
--   Data prevista: Serve para manter uma responsabilidade em realizar a tarefa até a data definida. _( Opcional )_
--   Valor: Define o valor, um preço. Para caso a tarefa criada envolva dinheiro. _( Opcional )_
+-   Categorias: Permite separar tarefas por categorias específicas. ( Opcional )
+-   Descrição: Uma descrição detalhada sobre oque deve ser realizado na tarefa. ( Opcional )
+-   Data prevista: Serve para manter uma responsabilidade em realizar a tarefa até a data definida. ( Opcional )
 -   Marcar: Define a tarefa como concluída.
 
 ### 2. Como a tarefa fica dentro do Banco De Dados?
