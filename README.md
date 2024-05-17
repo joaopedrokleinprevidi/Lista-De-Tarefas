@@ -47,6 +47,7 @@
 -   Express
 -   Firebase Admin
 -   Firebase Cloud Firestore (Banco de Dados)
+-   Joi
 -   Dotenv
 
 ### Ferramentas
@@ -133,12 +134,11 @@ ____Banco-De-Dados
 #### A tarefa é composta por alguns atributos, sendo alguns deles opcionais, e outros atribuídos automaticamente. Conheça cada um deles abaixo.
 
 -   Nome: O nome que o usuário atribuiu a tarefa.
--   Criado em: Informa quando a tarefa foi criada. Ajuda a manter uma coêrencia na sequência das tarefas. _( Atribuído automaticamente )_
+-   Criado em: Informa quando a tarefa foi criada. Ajuda a manter uma coêrencia na sequência das tarefas. ( Atribuído automaticamente )
 
--   Cor: Permite separar tarefas por categorias específicas. _( Opcional )_
--   Descrição: Uma descrição detalhada sobre oque deve ser realizado na tarefa. _( Opcional )_
--   Data prevista: Serve para manter uma responsabilidade em realizar a tarefa até a data definida. _( Opcional )_
--   Valor: Define o valor, um preço. Para caso a tarefa criada envolva dinheiro. _( Opcional )_
+-   Categorias: Permite separar tarefas por categorias específicas. ( Opcional )
+-   Descrição: Uma descrição detalhada sobre oque deve ser realizado na tarefa. ( Opcional )
+-   Data prevista: Serve para manter uma responsabilidade em realizar a tarefa até a data definida. ( Opcional )
 -   Marcar: Define a tarefa como concluída.
 
 ### 2. Como a tarefa fica dentro do Banco De Dados?
