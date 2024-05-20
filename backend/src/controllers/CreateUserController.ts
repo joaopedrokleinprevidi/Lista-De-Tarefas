@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import { IUserService } from '../@types'
 
 export const CreateUserController = ( UserService: IUserService ) => {
+
     const execute = async ( request: Request, response: Response ) => {
 
         try {
@@ -13,6 +14,7 @@ export const CreateUserController = ( UserService: IUserService ) => {
         }
     
         catch ( error: any ) {
+            console.error(error.code)
             throw new Error(error)
         }
 
