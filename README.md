@@ -91,39 +91,42 @@
 ### Sequência Lógica (Resumo)
 
 1.  Banco-De-Dados: Aonde ficarão todas as Listas do Maximum.
-2.  Lista-Do-Usuário-X: Lista de tarefa própria do usuário, aonde apenas ele tem 'acesso'.
-3.  Tarefa-X: Responsável por guardar os dados de cada tarefa.
-4.  Dados da Tarefa 'X': Auto explicativo. São os dados da tarefa.
+2.  Usuários: Aonde ficaram listados todos usuários.
+3.  Usuário-X: Aonde ficarão todos os dados do usuário X.
+4.  Tarefas: Aonde ficaram os dados de cada tarefa do usuário.
+5.  Tarefa-X: Aonde ficam os dados da tarefa.
+6.  Categorias: Aonde ficaram os dados de cada categoria do usuário.
+7.  Categoria-X: Aonde ficam os dados da categoria.
 
 ### Na prática
 
 ```bash
-____Banco-De-Dados
+____Usuários
     |
     |
-    |______Lista-Do-Usuario-X
-    |       |
-    |       |_____Tarefa-X
-    |       |      |__Name: "Ir na academia"
-    |       |      |__Color: "Red"
-    |       |      |__Description: "Você consegue! Disciplina!"
-    |       |      |__Created_at: "09/05/24"
-    |       |      |__Conclusion_at: "10/05/24"
-    |       |      |__Value: ""
-    |       |      |__Checked: true
-    |       |
-    |       |
-    |       |_____Tarefa-Y
-    |              |__Name: "Reunião"
-    |              |__Color: "Blue"
-    |              |__Description: "Conversar com a equipe para aumentar as metas semanais."
-    |              |__Created_at: "10/05/24"
-    |              |__Conclusion_at: "11/05/24"
-    |              |__Value: ""
-    |              |__Checked: true
+    |______Usuário 'X'
+    |      |
+    |      |______Tarefas
+    |      |      |
+    |      |      |_____Tarefa-X
+    |      |            |__Name: "Ir na academia"
+    |      |            |__Description: "Você consegue! Disciplina!"
+    |      |            |__Created_at: "09/05/24"
+    |      |            |__Conclusion_at: "10/05/24"
+    |      |            |__Checked: true
+    |      |
+    |      |
+    |      |
+    |      |_____Categorias
+    |            |
+    |            |______Categoria-X
+    |                   |
+    |                   |__Name: "Casa"
+    |                   |__Color: "Green"
+	|
     |
     |
-    |______Lista-Do-Usuario-Y
+    |______Usuário 'Y'
     |
     | ... to be continued ...
 
