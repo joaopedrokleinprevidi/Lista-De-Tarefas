@@ -1,4 +1,4 @@
-import { ITask } from "../domain/Task"
+import { ITask } from "../domain"
 
 export interface ITaskModel {
     createTask: ( userID: string, task: Omit<ITask, "id"> ) => Promise<void>
