@@ -4,7 +4,7 @@ import { ITaskModel } from "../../@types"
 export const deleteTask: ITaskModel["deleteTask"] = async ( userID, taskID ) => {
 
     try {
-        await database.collection(userID).doc(taskID).delete()
+        await database.collection("Usuarios").doc(userID).collection("Tarefas").doc(taskID).delete()
     }
     
     catch ( error: any ) {
