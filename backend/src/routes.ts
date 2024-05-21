@@ -12,8 +12,8 @@ import {
 } from "./modules/controllers/TaskControllers"
 
 import {
-    validationRegister,
-    validationTasks
+    validationRegisterMiddleware,
+    validationTaskMiddleware
 } from './modules/middlewares/validationMiddleware'
 
 import { CreateUserController } from "./modules/controllers/UserControlles"
@@ -21,15 +21,15 @@ import { CreateUserController } from "./modules/controllers/UserControlles"
 const router = express.Router()
 
 
-router.post("/auth/signUp", validationRegister.execute, CreateUserController)
+router.post("/auth/signUp", validationRegisterMiddleware, CreateUserController)
 
 router.get("/tasks/getAll", AuthMiddleware.VerifyUser, GetAllTasksController)
 
-router.post("/tasks/create", AuthMiddleware.VerifyUser, validationTasks.execute, CreateTaskController)
+router.post("/tasks/create", validationTaskMiddleware, CreateTaskController)
 
-router.put("/tasks/update", AuthMiddleware.VerifyUser, validationTasks.execute, UpdateTaskController)
-router.put("/tasks/checkAll", AuthMiddleware.VerifyUser, validationTasks.execute, CheckAllTasksController)
-router.put("/tasks/uncheckAll", AuthMiddleware.VerifyUser, validationTasks.execute, UncheckAllTasksController)
+router.put("/tasks/update", AuthMiddleware.VerifyUser, validationTaskMiddleware, UpdateTaskController)
+router.put("/tasks/checkAll", AuthMiddleware.VerifyUser, validationTaskMiddleware, CheckAllTasksController)
+router.put("/tasks/uncheckAll", AuthMiddleware.VerifyUser, validationTaskMiddleware, UncheckAllTasksController)
 
 router.delete("/tasks/delete", AuthMiddleware.VerifyUser, DeleteTaskController)
 

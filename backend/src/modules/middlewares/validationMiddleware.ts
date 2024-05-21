@@ -1,6 +1,5 @@
 import { validationMiddleware } from '../../middlewares/validationMiddleware'
-import { joiValidateFields } from '../../libs/JoiValidation'
-import { taskSchema, registerSchema } from '../../libs/JoiValidation/schemas'
+import { validationRegisterUser, validationTask } from '../../services/validationService'
 
-export const validationTasks = validationMiddleware(joiValidateFields, taskSchema)
-export const validationRegister = validationMiddleware(joiValidateFields, registerSchema)
+export const validationTaskMiddleware = validationMiddleware(validationTask)
+export const validationRegisterMiddleware = validationMiddleware(validationRegisterUser)

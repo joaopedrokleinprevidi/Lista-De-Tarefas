@@ -1,15 +1,20 @@
 import { NextFunction, Request, Response } from "express"
+import { IValidationMethod } from "../@types/services/ValidationService"
 
-export const validationMiddleware = (validate: any, schema: any) => {
+export const validationMiddleware = ( ValidationMethod: IValidationMethod ) => {
             
     const execute = ( request: Request, response: Response, next: NextFunction ) => {
 
-        const validation = validate(schema, request.body)
+        try {
+            ValidationMethod(request.body)
 
-        if ( validation === undefined || validation === null ) { next() }  
-    
-        else  { response.status(400).send(validation) }
+            next() 
+        }
+
+        catch ( error: any ) {
+            response.status(400).send(error)
+        }
     }   
 
-    return { execute } 
+    return execute
 }

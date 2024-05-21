@@ -1,14 +1,12 @@
-import Joi from 'joi'
-
-import { runValidation } from './RunValidation';
-import { errorMessages } from './ErrorMessages';
+import Joi from "joi"
+import { errorMessages } from "./ErrorMessages"
+import { throwExceptionValidation } from "./ThrowExceptionValidation"
 
 export const joiValidateFields = ( schemasToReceive: any, dataFromInputFields: any ) => {
-
+    
     const schemas = Joi.object(schemasToReceive).messages(errorMessages)
 
-    const responseValidate = runValidation(schemas, dataFromInputFields)
+    const { error } = schemas.validate(dataFromInputFields, { abortEarly: false })
 
-    return responseValidate
-
+    if ( error ) throwExceptionValidation(error)
 }
