@@ -1,9 +1,6 @@
 import { Request, Response } from 'express'
 import { ITaskModel } from '../../@types'
 
-
-
-
 export const CreateTaskController = ( TaskModel: ITaskModel ) => {
     const execute = async ( request: Request, response: Response ) => {
 
