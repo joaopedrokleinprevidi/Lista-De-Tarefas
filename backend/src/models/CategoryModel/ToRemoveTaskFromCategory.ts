@@ -1,8 +1,8 @@
-import { ICategoryModel, ICategory } from "../../@types"
+import { ICategoryModel } from "../../@types"
 import { getCategory } from "./GetCategory"
 import { updateCategory } from "./UpdateCategory"
 
-export const toRemoveCategoryFromTask: ICategoryModel["toRemoveCategoryFromTask"] = async ( userID, categoryID, taskID ) => {
+export const toRemoveTaskFromCategory: ICategoryModel["toRemoveTaskFromCategory"] = async ( userID, categoryID, taskID ) => {
    
     try {
         const category = await getCategory(userID, categoryID)

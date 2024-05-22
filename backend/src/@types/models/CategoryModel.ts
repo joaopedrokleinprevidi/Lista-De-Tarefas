@@ -7,6 +7,6 @@ export interface ICategoryModel {
     getAllCategories: ( userID: string ) => Promise<ICategory[]>
 
     getCategory: ( userID: string, categoryID: string ) => Promise<ICategory>
-    toAssignCategoryToTask: ( userID: string, categoryID: string, taskID: string ) => Promise<void>
-    toRemoveCategoryFromTask: ( userID: string, categoryID: string, taskID: string ) => Promise<void>
+    toAssignTaskToCategory: ( userID: string, categoryID: string, taskID: string ) => Promise<void>
+    toRemoveTaskFromCategory: ( userID: string, categoryID: string, taskID: string ) => Promise<void>
 }
