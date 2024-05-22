@@ -14,7 +14,6 @@ export const CreateUserController = ( UserService: IUserService ) => {
         }
     
         catch ( error: any ) {
-            console.error(error.code)
             throw new Error(error)
         }
 
