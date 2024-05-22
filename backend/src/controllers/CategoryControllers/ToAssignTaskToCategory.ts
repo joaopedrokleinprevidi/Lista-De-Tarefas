@@ -9,7 +9,7 @@ export const ToAssignTaskToCategoryController = ( CategoryModel: ICategoryModel)
             const { userID, categoryID, taskID } = request.body;
             await CategoryModel.toAssignTaskToCategory(userID, categoryID, taskID)
 
-            response.status(200).json({ message: "Task sucessfully added to category." })
+            response.status(200).json({ message: "Category sucessfully added to category." })
         }
     
         catch ( error: any ) {

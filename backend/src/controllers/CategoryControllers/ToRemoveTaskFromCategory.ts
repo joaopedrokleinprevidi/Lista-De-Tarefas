@@ -9,7 +9,7 @@ export const ToRemoveTaskFromCategoryController = ( CategoryModel: ICategoryMode
             const { userID, categoryID, taskID } = request.body;
             await CategoryModel.toRemoveTaskFromCategory(userID, categoryID, taskID)
 
-            response.status(200).json({ message: "Task successfully removed from category." })
+            response.status(200).json({ message: "Category successfully removed from category." })
         }
     
         catch ( error: any ) {
