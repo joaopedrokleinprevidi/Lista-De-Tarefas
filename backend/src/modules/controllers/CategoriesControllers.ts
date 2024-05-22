@@ -7,3 +7,4 @@ export const GetAllCategoriesController = CategoriesControllersModule.GetAllCate
 export const GetCategoryController = CategoriesControllersModule.GetCategoryController(CategoriesModel)
 export const ToAssignTaskToCategoryController = CategoriesControllersModule.ToAssignTaskToCategoryController(CategoriesModel)
 export const ToRemoveTaskFromCategoryController = CategoriesControllersModule.ToRemoveTaskFromCategoryController(CategoriesModel)
+export const updateCategory = CategoriesControllersModule.UpdateCategory(CategoriesModel)
