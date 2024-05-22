@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { ICategoryModel } from '../../@types'
 
-export const toRemoveTaskFromCategoryController = ( CategoryModel: ICategoryModel) => {
+export const ToRemoveTaskFromCategoryController = ( CategoryModel: ICategoryModel) => {
     
     const execute = async ( request: Request, response: Response ) => {
 

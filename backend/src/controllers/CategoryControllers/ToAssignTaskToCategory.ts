@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { ICategoryModel } from '../../@types'
 
-export const toAssignTaskToCategoryController = ( CategoryModel: ICategoryModel) => {
+export const ToAssignTaskToCategoryController = ( CategoryModel: ICategoryModel) => {
     
     const execute = async ( request: Request, response: Response ) => {
 
