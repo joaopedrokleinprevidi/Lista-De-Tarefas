@@ -16,7 +16,7 @@ import {
     validationTaskMiddleware
 } from './modules/middlewares/validationMiddleware'
 
-import { CreateUserController } from "./modules/controllers/UserControllers"
+import { CreateUserController } from "./modules/services/UserControllers"
 
 const router = express.Router()
 
