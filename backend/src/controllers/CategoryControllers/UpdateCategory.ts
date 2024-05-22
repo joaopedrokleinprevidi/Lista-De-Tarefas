@@ -1,13 +1,13 @@
 import { Request, Response } from 'express'
 import { ICategoryModel } from '../../@types'
 
-export const ToRemoveTaskFromCategoryController = ( CategoryModel: ICategoryModel) => {
+export const UpdateCategory = ( CategoryModel: ICategoryModel) => {
     
     const execute = async ( request: Request, response: Response ) => {
 
         try {
-            const { userID, categoryID, taskID } = request.body;
-            await CategoryModel.toRemoveTaskFromCategory(userID, categoryID, taskID)
+            const { userID, categoryID, categoryUpdate } = request.body;
+            await CategoryModel.updateCategory(userID, categoryID, categoryUpdate)
 
             response.status(200).json({ message: "Category successfully removed from category." })
         }

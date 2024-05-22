@@ -1,4 +1,4 @@
-import * as TasksControllersModule from "../../controllers/taskControllers"
+import * as TasksControllersModule from "../../controllers/TaskControllers"
 import * as TaskModel from "../../models/TaskModel"
 import { UpdateTaskCheckedStatusUseCase } from "../useCases"
 
