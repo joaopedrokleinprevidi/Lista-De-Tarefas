@@ -1,4 +1,4 @@
-import * as UserControllerModule from "../../controllers/CreateUserController"
+import * as UserControllerModule from "../../controllers/UserControllers/CreateUserController"
 
 import * as FirestoreService from "../../services/firebaseAdminService"
 

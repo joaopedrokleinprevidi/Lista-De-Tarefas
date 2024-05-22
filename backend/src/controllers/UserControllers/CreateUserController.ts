@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { IUserService } from '../@types'
+import { IUserService } from '../../@types'
 
 export const CreateUserController = ( UserService: IUserService ) => {
 
@@ -14,7 +14,6 @@ export const CreateUserController = ( UserService: IUserService ) => {
         }
     
         catch ( error: any ) {
-            console.error(error.code)
             throw new Error(error)
         }
 
