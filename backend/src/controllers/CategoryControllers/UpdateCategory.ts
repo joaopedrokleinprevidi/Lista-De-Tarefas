@@ -9,7 +9,7 @@ export const UpdateCategory = ( CategoryModel: ICategoryModel) => {
             const { userID, categoryID, categoryUpdate } = request.body;
             await CategoryModel.updateCategory(userID, categoryID, categoryUpdate)
 
-            response.status(200).json({ message: "Category successfully removed from category." })
+            response.status(200).json({ message: "Category updated successfully." })
         }
     
         catch ( error: any ) {

@@ -1,7 +1,15 @@
-export * from './CreateCategory'
-export * from './DeleteCategory'
-export * from './GetAllCategories'
-export * from './GetCategory'
-export * from './ToAssignTaskToCategory'
-export * from './ToRemoveTaskFromCategory'
-export * from './UpdateCategory'
+import { createCategory } from './CreateCategory'
+import { deleteCategory } from './DeleteCategory'
+import { getAllCategories } from './GetAllCategories'
+import { getCategory } from './GetCategory'
+import { updateCategory } from './UpdateCategory'
+
+const CategoriesModel = {
+    createCategory,
+    deleteCategory,
+    updateCategory,
+    getAllCategories,
+    getCategory
+}
+
+export default CategoriesModel
