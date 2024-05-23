@@ -1,12 +1,12 @@
 import { Request, Response } from "express"
-import { IUpdateTaskCheckedStatusUseCase } from "../../useCases"
+import { ITaskUseCase } from "../../@types"
 
-export const CheckAllTasksController = ( UpdateTaskCheckedStatusUseCase: IUpdateTaskCheckedStatusUseCase ) => {
+export const CheckAllTasksController = ( TaskUseCaseModule: ITaskUseCase ) => {
         
     const execute = async ( request: Request, response: Response ) => {
         try {
             const { userID } = request.body
-            const tasks = await UpdateTaskCheckedStatusUseCase(userID, true)
+            const tasks = await TaskUseCaseModule.UpdateTaskCheckedStatusUseCase(userID, true)
     
             response.status(200).json(tasks)
         }
