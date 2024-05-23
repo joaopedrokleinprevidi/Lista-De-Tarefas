@@ -2,15 +2,13 @@ import { ICategoryModel, ICategoryUseCase } from "../../@types"
 
 export const toRemoveTaskFromCategory = ( CategoryModel: ICategoryModel ) => {
    
-    const execute: ICategoryUseCase["ToRemoveTaskFromCategory"] = async (userID, categoryID, taskID) => {
+    const execute: ICategoryUseCase["ToRemoveTaskFromCategory"] = async ( userID, categoryID, taskID ) => {
 
         try {
             const category = await CategoryModel.getCategory(userID, categoryID)
-    
             const removeTaskFromCategory = category.tasks?.filter(id => id !== taskID )
-            console.log(removeTaskFromCategory)
     
-            await CategoryModel.updateCategory(userID, categoryID, {removeTaskFromCategory})
+            await CategoryModel.updateCategory(userID, categoryID, { tasks: removeTaskFromCategory })
         }
     
         catch ( error: any ) {
@@ -19,6 +17,5 @@ export const toRemoveTaskFromCategory = ( CategoryModel: ICategoryModel ) => {
 
     }
 
-    return execute;
-
+    return execute
 }

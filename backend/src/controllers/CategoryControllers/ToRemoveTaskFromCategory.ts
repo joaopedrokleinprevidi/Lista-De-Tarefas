@@ -7,7 +7,7 @@ export const ToRemoveTaskFromCategoryController = ( CategoryUseCase: ICategoryUs
 
         try {
             const { userID, categoryID, taskID } = request.body;
-            CategoryUseCase.ToRemoveTaskFromCategory(userID, categoryID, taskID)
+            await CategoryUseCase.ToRemoveTaskFromCategory(userID, categoryID, taskID)
 
             response.status(200).json({ message: "Task successfully removed from category." })
         }
