@@ -1,12 +1,15 @@
-import router from './index'
+import express from 'express'
+const userRoutes = express.Router() 
 
 import { CreateUserController, DeleteUserController, GetUserByEmailController } from '../modules/controllers/UserControllers'
 import { AuthMiddleware } from '../middlewares/authMiddleware'
 import { validationRegisterMiddleware } from '../modules/middlewares/validationMiddleware'
 
 
-router.post("/auth/signUp", validationRegisterMiddleware, CreateUserController)
+userRoutes.post("/auth/signUp", validationRegisterMiddleware, CreateUserController)
 
-router.delete("/auth/delete", AuthMiddleware.VerifyUser, DeleteUserController)
+userRoutes.delete("/auth/delete", AuthMiddleware.VerifyUser, DeleteUserController)
 
-router.get("/auth/getUser", GetUserByEmailController)
+userRoutes.get("/auth/getUser", GetUserByEmailController)
+
+export default userRoutes

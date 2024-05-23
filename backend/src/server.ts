@@ -2,7 +2,9 @@ import './config/firebaseAccountService'
 
 import express from 'express';
 import cors from 'cors';
-import router from './routes/index';
+import taskRoutes from './routes/TaskRoutes';
+import userRoutes from './routes/CategoriesRoutes';
+import categoriesRoutes from './routes/CategoriesRoutes';
 
 const PORT = 4000;
 
@@ -16,7 +18,9 @@ app.use(cors({
     credentials: false, // Habilita o envio de cookies de origens cruzadas(diferentes)
 }))
 
-app.use(router)
+app.use(taskRoutes)
+app.use(userRoutes)
+app.use(categoriesRoutes)
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando em: http://localhost:${PORT}`)
