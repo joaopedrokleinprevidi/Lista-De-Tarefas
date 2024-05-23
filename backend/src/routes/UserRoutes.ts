@@ -10,6 +10,6 @@ userRoutes.post("/auth/signUp", validationRegisterMiddleware, CreateUserControll
 
 userRoutes.delete("/auth/delete", AuthMiddleware.VerifyUser, DeleteUserController)
 
-userRoutes.get("/auth/getUser", GetUserByEmailController)
+userRoutes.get("/auth/getUser", AuthMiddleware.VerifyUser, GetUserByEmailController)
 
 export default userRoutes
