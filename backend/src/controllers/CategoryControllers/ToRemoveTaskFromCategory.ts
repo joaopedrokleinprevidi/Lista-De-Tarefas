@@ -1,15 +1,15 @@
 import { Request, Response } from 'express'
-import { ICategoryModel } from '../../@types'
+import { ICategoryUseCase } from '../../@types';
 
-export const ToRemoveTaskFromCategoryController = ( CategoryModel: ICategoryModel) => {
+export const ToRemoveTaskFromCategoryController = ( CategoryUseCase: ICategoryUseCase ) => {
     
     const execute = async ( request: Request, response: Response ) => {
 
         try {
             const { userID, categoryID, taskID } = request.body;
-            await CategoryModel.toRemoveTaskFromCategory(userID, categoryID, taskID)
+            CategoryUseCase.ToRemoveTaskFromCategory(userID, categoryID, taskID)
 
-            response.status(200).json({ message: "Category successfully removed from category." })
+            response.status(200).json({ message: "Task successfully removed from category." })
         }
     
         catch ( error: any ) {
