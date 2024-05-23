@@ -1,5 +1,5 @@
 import { AuthMiddleware } from '../middlewares/authMiddleware'
-import { CreateCategoryController, DeleteCategoryController, GetAllCategoriesController, GetCategoryController, ToAssignTaskToCategoryController, ToRemoveTaskFromCategoryController, updateCategory } from '../modules/controllers/CategoriesControllers'
+import { CreateCategoryController, DeleteCategoryController, GetAllCategoriesController, ToAssignTaskToCategoryController, ToRemoveTaskFromCategoryController, GetCategoryController, updateCategory } from '../modules/controllers/CategoriesControllers'
 import router from './index'
 
 router.post("/categories/create", AuthMiddleware.VerifyUser, CreateCategoryController)
