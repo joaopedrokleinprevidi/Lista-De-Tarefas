@@ -3,9 +3,6 @@ import { getFirestore } from 'firebase-admin/firestore'
 
 import { config } from 'dotenv'
 
-
-//Testar arquivo
-//Testar path abaixo do dotenv.config()
 config({
   path: "src/config/.env"
 })

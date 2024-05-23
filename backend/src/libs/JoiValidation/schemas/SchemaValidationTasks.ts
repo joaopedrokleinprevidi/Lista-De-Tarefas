@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 export const taskSchema = {
-    userID: Joi.string().max(20).required(),
+    userID: Joi.string().max(30).required(),
 
     task: {
         name: Joi.string().min(3).max(50).required(),

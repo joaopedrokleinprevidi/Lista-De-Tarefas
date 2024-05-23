@@ -1,10 +1,11 @@
-import * as CategoriesControllersModule from "../../controllers/CategoryControllers"
-import * as CategoriesModel from '../../models/CategoryModel'
+import CategoriesControllers from "../../controllers/CategoryControllers"
+import CategoriesModel from '../../models/CategoryModel/index'
+import CategoryUseCase from '../useCases/CategoriesUseCases'
 
-export const CreateCategoryController = CategoriesControllersModule.CreateCategoryController(CategoriesModel)
-export const DeleteCategoryController = CategoriesControllersModule.DeleteCategoryController(CategoriesModel)
-export const GetAllCategoriesController = CategoriesControllersModule.GetAllCategoriesController(CategoriesModel)
-export const GetCategoryController = CategoriesControllersModule.GetCategoryController(CategoriesModel)
-export const ToAssignTaskToCategoryController = CategoriesControllersModule.ToAssignTaskToCategoryController(CategoriesModel)
-export const ToRemoveTaskFromCategoryController = CategoriesControllersModule.ToRemoveTaskFromCategoryController(CategoriesModel)
-export const updateCategory = CategoriesControllersModule.UpdateCategory(CategoriesModel)
+export const CreateCategoryController = CategoriesControllers.CreateCategoryController(CategoriesModel)
+export const DeleteCategoryController = CategoriesControllers.DeleteCategoryController(CategoriesModel)
+export const GetAllCategoriesController = CategoriesControllers.GetAllCategoriesController(CategoriesModel)
+export const GetCategoryController = CategoriesControllers.GetCategoryController(CategoriesModel)
+export const ToAssignTaskToCategoryController = CategoriesControllers.ToAssignTaskToCategoryController(CategoryUseCase)
+export const ToRemoveTaskFromCategoryController = CategoriesControllers.ToRemoveTaskFromCategoryController(CategoryUseCase)
+export const updateCategory = CategoriesControllers.UpdateCategory(CategoriesModel)

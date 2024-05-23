@@ -1,15 +1,15 @@
 import { Request, Response } from 'express'
-import { ICategoryModel } from '../../@types'
+import { ICategoryUseCase } from '../../@types';
 
-export const ToAssignTaskToCategoryController = ( CategoryModel: ICategoryModel) => {
+export const ToAssignTaskToCategoryController = ( CategoryUseCase: ICategoryUseCase ) => {
     
     const execute = async ( request: Request, response: Response ) => {
 
         try {
             const { userID, categoryID, taskID } = request.body;
-            await CategoryModel.toAssignTaskToCategory(userID, categoryID, taskID)
+            CategoryUseCase.ToAssignTaskToCategory(userID, categoryID, taskID)
 
-            response.status(200).json({ message: "Category sucessfully added to category." })
+            response.status(200).json({ message: "Task sucessfully added to category." })
         }
     
         catch ( error: any ) {

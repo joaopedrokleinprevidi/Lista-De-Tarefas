@@ -1,11 +1,7 @@
-import { ITaskModel } from "../@types" 
-
-export interface IUpdateTaskCheckedStatusUseCase {
-    ( userID: string, checked: boolean ): Promise<void>
-}
+import { ITaskModel, ITaskUseCase } from "../../@types" 
 
 export const UpdateTaskCheckedStatusUseCase = ( TaskModel: ITaskModel ) => {
-    const execute: IUpdateTaskCheckedStatusUseCase = async ( userID, checked ) => {
+    const execute: ITaskUseCase["UpdateTaskCheckedStatusUseCase"] = async ( userID, checked ) => {
 
         try {
             const allTasks = await TaskModel.getAllTasks(userID)
