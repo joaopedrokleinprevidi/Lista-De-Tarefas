@@ -7,9 +7,9 @@ export const ToAssignTaskToCategoryController = ( CategoryUseCase: ICategoryUseC
 
         try {
             const { userID, categoryID, taskID } = request.body;
-            CategoryUseCase.ToAssignTaskToCategory(userID, categoryID, taskID)
+            await CategoryUseCase.ToAssignTaskToCategory(userID, categoryID, taskID)
 
-            response.status(200).json({ message: "Task sucessfully added to category." })
+            response.status(200).json({ message: "Category sucessfully added to category." })
         }
     
         catch ( error: any ) {
