@@ -1,3 +1,3 @@
-export * from './SchemaValidationRegister'
-export * from './SchemaValidationTasks'
-export * from './SchemaValidationUpdateTasks'
+export * from "./SchemaValidationRegister"
+export * from "./SchemaValidationTasks"
+export * from "./SchemaValidationUpdateTasks"

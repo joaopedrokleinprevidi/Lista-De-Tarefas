@@ -1,6 +1,6 @@
-import { validationMiddleware } from '../../middlewares/validationMiddleware'
-import { validationRegisterUser, validationTask, validationUpdateTask } from '../../services/validationService'
+import * as ValidationService from "../../services/validationService"
+import { ValidationMiddleware } from "../../middlewares/ValidationMiddleware"
 
-export const validationTaskMiddleware = validationMiddleware(validationTask)
-export const validationRegisterMiddleware = validationMiddleware(validationRegisterUser)
-export const validationUpdateTaskMiddleware = validationMiddleware(validationUpdateTask)
+export const ValidationTaskMiddleware = ValidationMiddleware(ValidationService.validationTask)
+export const ValidationRegisterMiddleware = ValidationMiddleware(ValidationService.validationRegisterUser)
+export const ValidationUpdateTaskMiddleware = ValidationMiddleware(ValidationService.validationUpdateTask)

@@ -10,5 +10,4 @@ export const deleteTask: ITaskModel["deleteTask"] = async ( userID, taskID ) => 
     catch ( error: any ) {
         throw new Error(error)
     }
-
 }

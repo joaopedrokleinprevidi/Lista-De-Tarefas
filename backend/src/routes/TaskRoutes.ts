@@ -1,21 +1,28 @@
-import express from 'express'
-const taskRoutes = express.Router() 
+import { Router } from "express"
+import { AuthUserMiddleware } from "../modules/middlewares/AuthUserMiddleware"
+import { ValidationTaskMiddleware,  ValidationUpdateTaskMiddleware } from "../modules/middlewares/ValidationMiddleware"
 
-import { CheckAllTasksController, CreateTaskController, DeleteTaskController, GetAllTasksController, UncheckAllTasksController, UpdateTaskController } from '../modules/controllers/TaskControllers'
-import { AuthMiddleware } from '../middlewares/authMiddleware'
-import { validationTaskMiddleware, validationUpdateTaskMiddleware } from '../modules/middlewares/validationMiddleware'
+import {
+    CheckAllTasksController,
+    CreateTaskController,
+    DeleteTaskController,
+    GetAllTasksController,
+    UncheckAllTasksController,
+    UpdateTaskController
+} from "../modules/controllers/TaskControllers"
 
+const taskRoutes = Router()
 
-taskRoutes.get("/tasks/getAll", AuthMiddleware.VerifyUser, GetAllTasksController)
+taskRoutes.get("/tasks/getAll", AuthUserMiddleware, GetAllTasksController)
 
-taskRoutes.post("/tasks/create", AuthMiddleware.VerifyUser, validationTaskMiddleware, CreateTaskController)
+taskRoutes.post("/tasks/create", CreateTaskController)
 
-taskRoutes.put("/tasks/update", AuthMiddleware.VerifyUser, validationUpdateTaskMiddleware, UpdateTaskController)
+taskRoutes.put("/tasks/update", AuthUserMiddleware, ValidationUpdateTaskMiddleware, UpdateTaskController)
 
-taskRoutes.put("/tasks/checkAll", AuthMiddleware.VerifyUser, validationTaskMiddleware, CheckAllTasksController)
+taskRoutes.put("/tasks/checkAll", AuthUserMiddleware, ValidationTaskMiddleware, CheckAllTasksController)
 
-taskRoutes.put("/tasks/uncheckAll", AuthMiddleware.VerifyUser, validationTaskMiddleware, UncheckAllTasksController)
+taskRoutes.put("/tasks/uncheckAll", AuthUserMiddleware, ValidationTaskMiddleware, UncheckAllTasksController)
 
-taskRoutes.delete("/tasks/delete", AuthMiddleware.VerifyUser, DeleteTaskController)
+taskRoutes.delete("/tasks/delete", AuthUserMiddleware, DeleteTaskController)
 
 export default taskRoutes

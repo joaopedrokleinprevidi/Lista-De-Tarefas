@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express"
-import { IValidationMethod } from "../@types/services/ValidationService"
+import { IValidationMethod } from "../@types"
 
-export const validationMiddleware = ( ValidationMethod: IValidationMethod ) => {
+export const ValidationMiddleware = ( ValidationMethod: IValidationMethod ) => {
             
     const execute = ( request: Request, response: Response, next: NextFunction ) => {
 

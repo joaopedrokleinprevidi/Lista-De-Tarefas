@@ -1,10 +1,10 @@
-import TasksControllers from "../../controllers/TaskControllers"
-import TaskModel from "../../models/TaskModel"
-import TaskUseCaseModule from "../useCases/TasksUseCases"
+import * as TaskModel from "../../models/taskModel"
+import * as TasksControllers from "../../controllers/tasksControllers"
+import { UpdateTaskCheckedStatusUseCase } from "../useCases/TasksUseCases"
 
-export const CheckAllTasksController = TasksControllers.CheckAllTasksController(TaskUseCaseModule)
+export const CheckAllTasksController = TasksControllers.CheckAllTasksController(UpdateTaskCheckedStatusUseCase)
 export const CreateTaskController = TasksControllers.CreateTaskController(TaskModel)
 export const DeleteTaskController = TasksControllers.DeleteTaskController(TaskModel)
 export const GetAllTasksController = TasksControllers.GetAllTasksController(TaskModel)
-export const UncheckAllTasksController = TasksControllers.UncheckAllTasksController(TaskUseCaseModule)
+export const UncheckAllTasksController = TasksControllers.UncheckAllTasksController(UpdateTaskCheckedStatusUseCase)
 export const UpdateTaskController = TasksControllers.UpdateTaskController(TaskModel)

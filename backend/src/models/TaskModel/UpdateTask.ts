@@ -10,5 +10,4 @@ export const updateTask: ITaskModel["updateTask"] = async ( userID, taskID, task
     catch ( error: any ) {
         throw new Error(error)
     }
-
 }
