@@ -1,5 +1,5 @@
-import { Request, Response } from 'express'
-import { IUserService } from '../../@types'
+import { Request, Response } from "express"
+import { IUserService } from "../../@types"
 
 export const CreateUserController = ( UserService: IUserService ) => {
 
@@ -16,7 +16,6 @@ export const CreateUserController = ( UserService: IUserService ) => {
         catch ( error: any ) {
             throw new Error(error)
         }
-
     }
 
     return execute

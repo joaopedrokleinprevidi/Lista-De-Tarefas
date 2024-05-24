@@ -1,5 +1,5 @@
-import { Request, Response } from 'express'
-import { IUserService } from '../../@types'
+import { Request, Response } from "express"
+import { IUserService } from "../../@types"
 
 export const GetUserByEmailController = ( UserService: IUserService ) => {
 
@@ -7,7 +7,6 @@ export const GetUserByEmailController = ( UserService: IUserService ) => {
 
         try {
             const { email } = request.body
-            
             const user = await UserService.getUserByEmail(email)
 
             response.status(200).json(user)
@@ -16,7 +15,6 @@ export const GetUserByEmailController = ( UserService: IUserService ) => {
         catch ( error: any ) {
             throw new Error(error)
         }
-
     }
 
     return execute

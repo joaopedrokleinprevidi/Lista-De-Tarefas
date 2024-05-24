@@ -1,27 +1,23 @@
-import './config/firebaseAccountService'
+import "./config/firebaseAccountService"
+import { config } from "dotenv"
+import express from "express"
+import cors from "cors"
+import routes from "./routes"
 
-import express from 'express';
-import cors from 'cors';
-import taskRoutes from './routes/TaskRoutes';
-import userRoutes from './routes/CategoriesRoutes';
-import categoriesRoutes from './routes/CategoriesRoutes';
+config({ path: "src/config/.env" })
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000
+const app = express()
 
-const app = express();
+app.use( express.json() )
 
-app.use(express.json());
-app.use(cors({
-    origin: ["*"],
-    methods: ["GET", "POST", "DELETE", "PUT"],
-    allowedHeaders: ["Content-Type", "Authorization", "uid"],
-    credentials: false, // Habilita o envio de cookies de origens cruzadas(diferentes)
+app.use( cors({
+    origin: [ "*" ],
+    methods: [ "GET", "POST", "DELETE", "PUT" ],
+    allowedHeaders: [ "Content-Type", "Authorization", "uid" ],
+    credentials: false
 }))
 
-app.use(taskRoutes)
-app.use(userRoutes)
-app.use(categoriesRoutes)
+app.use(routes)
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em: http://localhost:${PORT}`)
-})
+app.listen(PORT, () => console.log(`Servidor rodando em: http://localhost:${PORT}`) )

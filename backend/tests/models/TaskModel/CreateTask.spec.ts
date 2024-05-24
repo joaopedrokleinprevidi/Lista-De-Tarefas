@@ -1,20 +1,17 @@
-import { database } from "../../../src/config/firebaseAccountService"
 import { createTask } from "../../../src/models/TaskModel"
-
 import { deleteAllTasksFactory, taskCreateDataFactory } from "../factories/TaskFactory"
 import { deleteUserFactory, userFactory } from "../factories/UserFactory"
 
 describe("TaskModel > CreateTask", () => {
+    let user: { uid: string }
 
-    beforeAll( async () => await database )
+    beforeAll( async () => user = await userFactory() )
 
-    afterEach( async () => { 
-        await deleteAllTasksFactory()
-        await deleteUserFactory() 
-    })
+    afterEach( async () => await deleteAllTasksFactory() )
+
+    afterAll( async () => await deleteUserFactory()  )
 
     it("Deve criar uma tarefa com sucesso", async () => {
-        const user = await userFactory()
         const taskCreate = taskCreateDataFactory
         const newTask = await createTask(user.uid, taskCreate)
         

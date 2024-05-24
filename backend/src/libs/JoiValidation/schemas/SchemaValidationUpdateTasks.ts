@@ -1,4 +1,4 @@
-import Joi from "joi";
+import Joi from "joi"
 
 export const updateTaskSchema = {
     userID: Joi.string().max(30).required(),

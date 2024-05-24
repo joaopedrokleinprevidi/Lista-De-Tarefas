@@ -1,5 +1,5 @@
 import { database } from "../../config/firebaseAccountService"
-import { ICategoryModel, ICategory } from "../../@types"
+import { ICategoryModel } from "../../@types"
 
 export const updateCategory: ICategoryModel["updateCategory"] = async ( userID, categoryID, categoryUpdate ) => {
    
@@ -10,5 +10,4 @@ export const updateCategory: ICategoryModel["updateCategory"] = async ( userID, 
     catch ( error: any ) {
         throw new Error(error)
     }
-
 }

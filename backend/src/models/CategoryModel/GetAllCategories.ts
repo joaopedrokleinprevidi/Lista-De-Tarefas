@@ -17,5 +17,4 @@ export const getAllCategories: ICategoryModel["getAllCategories"] = async ( user
     catch ( error: any ) {
         throw new Error(error)
     }
-
 }

@@ -1,7 +1,8 @@
-import { UserRecord } from "firebase-admin/auth"
+import { IUser } from "../domain/User"
 
 export interface IUserService {
-    createUser: ( email: string, password: string ) => Promise<UserRecord>
-    getUserByEmail: ( email: string ) => Promise<UserRecord>
-    deleteUser: ( userID: string ) => Promise<void>
+    authUser: ( toke: string ) => Promise<void>
+    createUser: ( email: string, password: string ) => Promise<IUser>
+    getUserByEmail: ( email: string ) => Promise<IUser>
+    deleteUser: ( userID: string ) => Promise<void> 
 }

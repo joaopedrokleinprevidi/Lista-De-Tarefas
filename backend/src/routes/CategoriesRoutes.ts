@@ -1,21 +1,30 @@
-import express from 'express'
-const categoriesRoutes = express.Router() 
+import { Router } from "express"
+import { AuthUserMiddleware } from "../modules/middlewares/AuthUserMiddleware"
 
-import { AuthMiddleware } from '../middlewares/authMiddleware'
-import { CreateCategoryController, DeleteCategoryController, GetAllCategoriesController, ToAssignTaskToCategoryController, ToRemoveTaskFromCategoryController, GetCategoryController, updateCategory } from '../modules/controllers/CategoriesControllers'
+import {
+    CreateCategoryController,
+    DeleteCategoryController,
+    GetAllCategoriesController,
+    ToAssignTaskToCategoryController,
+    ToRemoveTaskFromCategoryController,
+    GetCategoryController,
+    updateCategory
+} from "../modules/controllers/CategoriesControllers"
 
-categoriesRoutes.post("/categories/create", AuthMiddleware.VerifyUser, CreateCategoryController)
+const categoriesRoutes = Router() 
 
-categoriesRoutes.delete("/categories/delete", AuthMiddleware.VerifyUser, DeleteCategoryController)
+categoriesRoutes.post("/categories/create", AuthUserMiddleware, CreateCategoryController)
 
-categoriesRoutes.get("/categories/getAll", AuthMiddleware.VerifyUser, GetAllCategoriesController)
+categoriesRoutes.delete("/categories/delete", AuthUserMiddleware, DeleteCategoryController)
 
-categoriesRoutes.get("/categories/get", AuthMiddleware.VerifyUser, GetCategoryController)
+categoriesRoutes.get("/categories/getAll", AuthUserMiddleware, GetAllCategoriesController)
 
-categoriesRoutes.put("/categories/assignTaskToCategory", AuthMiddleware.VerifyUser, ToAssignTaskToCategoryController)
+categoriesRoutes.get("/categories/get", AuthUserMiddleware, GetCategoryController)
 
-categoriesRoutes.put("/categories/removeTaskFromCategory", AuthMiddleware.VerifyUser, ToRemoveTaskFromCategoryController)
+categoriesRoutes.put("/categories/assignTaskToCategory", AuthUserMiddleware, ToAssignTaskToCategoryController)
 
-categoriesRoutes.put("/categories/update", AuthMiddleware.VerifyUser, updateCategory)
+categoriesRoutes.put("/categories/removeTaskFromCategory", AuthUserMiddleware, ToRemoveTaskFromCategoryController)
+
+categoriesRoutes.put("/categories/update", AuthUserMiddleware, updateCategory)
 
 export default categoriesRoutes

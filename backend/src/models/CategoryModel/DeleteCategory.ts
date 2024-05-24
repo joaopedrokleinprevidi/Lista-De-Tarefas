@@ -10,5 +10,4 @@ export const deleteCategory: ICategoryModel["deleteCategory"] = async ( userID, 
     catch ( error: any ) {
         throw new Error(error)
     }
-
 }

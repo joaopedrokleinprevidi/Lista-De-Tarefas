@@ -1,13 +1,13 @@
 import { Request, Response } from "express"
-import { ITaskUseCase } from "../../@types"
+import { IUpdateTaskCheckedStatusUseCase } from "../../@types"
 
-
-export const UncheckAllTasksController = ( TaskUseCaseModule: ITaskUseCase ) => {
+export const UncheckAllTasksController = ( UpdateTaskCheckedStatusUseCase: IUpdateTaskCheckedStatusUseCase ) => {
         
     const execute = async ( request: Request, response: Response ) => {
+        
         try {
             const { userID } = request.body
-            const tasks = await TaskUseCaseModule.UpdateTaskCheckedStatusUseCase(userID, false)
+            const tasks = await UpdateTaskCheckedStatusUseCase(userID, false)
     
             response.status(200).json(tasks)
         }
@@ -18,5 +18,4 @@ export const UncheckAllTasksController = ( TaskUseCaseModule: ITaskUseCase ) => 
     }
 
     return execute
-
 }

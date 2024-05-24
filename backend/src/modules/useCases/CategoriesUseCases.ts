@@ -1,12 +1,5 @@
-import CategoriesUseCase from '../../useCases/CategoriesUseCases/'
-import CategoriesModel from '../../models/CategoryModel/'
+import * as CategoryModel from "../../models/categoryModel"
+import * as CategoriesUseCases from "../../useCases/categoriesUseCases"
 
-const ToAssignTaskToCategory = CategoriesUseCase.toAssignTaskToCategory(CategoriesModel)
-const ToRemoveTaskFromCategory = CategoriesUseCase.toRemoveTaskFromCategory(CategoriesModel)
-
-const CategoryUseCase = {
-    ToAssignTaskToCategory,
-    ToRemoveTaskFromCategory
-}
-
-export default CategoryUseCase
+export const ToAssignTaskToCategoryUseCase = CategoriesUseCases.ToAssignTaskToCategoryUseCase(CategoryModel)
+export const ToRemoveTaskFromCategoryUseCase = CategoriesUseCases.ToRemoveTaskFromCategoryUseCase(CategoryModel)
