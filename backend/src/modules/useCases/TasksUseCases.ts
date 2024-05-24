@@ -1,10 +1,4 @@
-import TaskModel from "../../models/TaskModel"
-import TaskUseCase from "../../useCases/TasksUseCases"
+import * as TaskModel from "../../models/taskModel"
+import * as TaskUseCase from "../../useCases/tasksUseCases"
 
-const UpdateTaskCheckedStatusUseCase = TaskUseCase.UpdateTaskCheckedStatusUseCase(TaskModel)
-
-const TaskUseCaseModule = {
-    UpdateTaskCheckedStatusUseCase
-}
-
-export default TaskUseCaseModule
+export const UpdateTaskCheckedStatusUseCase = TaskUseCase.UpdateTaskCheckedStatusUseCase(TaskModel)

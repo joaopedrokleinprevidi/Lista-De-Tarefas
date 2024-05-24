@@ -1,7 +1,8 @@
-import { Request, Response } from 'express'
-import { ICategoryModel } from '../../@types'
+import { Request, Response } from "express"
+import { ICategoryModel } from "../../@types"
 
 export const CreateCategoryController = ( CategoryModel: ICategoryModel ) => {
+    
     const execute = async ( request: Request, response: Response ) => {
 
         try {
@@ -9,13 +10,12 @@ export const CreateCategoryController = ( CategoryModel: ICategoryModel ) => {
 
             await CategoryModel.createCategory(userID, category)
 
-            response.status(201).json({ message: 'Category created successfully.' })
+            response.status(201).json({ message: "Category created successfully." })
         }
     
         catch ( error: any ) {
             response.status(500).json(error)
         }
-
     }
 
     return execute

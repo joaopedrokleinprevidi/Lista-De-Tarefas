@@ -1,31 +1,24 @@
-import { ICategoryModel, ICategoryUseCase } from "../../@types"
+import { ICategoryModel, IToAssignTaskToCategoryUseCase } from "../../@types"
 
-export const toAssignTaskToCategory = ( CategoryModel: ICategoryModel ) => {
+export const ToAssignTaskToCategoryUseCase = ( CategoryModel: ICategoryModel ) => {
    
-    const execute: ICategoryUseCase["ToAssignTaskToCategory"] = async ( userID, categoryID, taskID ) => {
+    const execute: IToAssignTaskToCategoryUseCase = async ( userID, categoryID, taskID ) => {
 
         try {
             const category = await CategoryModel.getCategory(userID, categoryID)
-    
-            const taskExists = category.tasks?.filter(id => id == taskID )
+            const taskExists = category.tasks.includes(taskID)
 
-            if( taskExists ){
-                throw new Error("Task já existe!")
-            } 
+            if( taskExists ) throw new Error("Task já existe!") 
 
-            const tasks = category.tasks ? [...category.tasks, taskID] : [ taskID ]
-            await CategoryModel.updateCategory(userID, categoryID, { tasks })   
+            category.tasks.push(taskID)
 
+            await CategoryModel.updateCategory(userID, categoryID, { tasks: category.tasks })   
         }
     
         catch ( error: any ) {
-            console.log("teste", error)
-            
             throw new Error(error)
         }
-
     }
 
-    return execute;
-
+    return execute
 }

@@ -5,21 +5,11 @@ export const getCategory: ICategoryModel["getCategory"] = async ( userID, catego
 
     try {
         const categoryDoc = await database.collection("Usuarios").doc(userID).collection("Categorias").doc(categoryID).get()
-        
-        const categoryData = categoryDoc.data()
 
-        const category: ICategory = {
-            id: categoryID,
-            name: categoryData?.name,
-            color: categoryData?.color,
-            tasks: categoryData?.tasks
-        }
-
-            return category
+        return { id: categoryDoc.id, ...categoryDoc.data() } as ICategory
     }
 
     catch ( error: any ) {
         throw new Error(error)
     }
-
 }

@@ -1,2 +1,2 @@
-export * from './CategoryUseCase'
-export * from './TaskUseCase'
+export * from "./CategoryUseCase"
+export * from "./TaskUseCases"
