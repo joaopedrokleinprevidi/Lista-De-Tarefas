@@ -1,6 +1,6 @@
-import { ITask } from "../../../src/@types"
-import { deleteTask, getAllTasks } from "../../../src/models/TaskModel"
-import { getUserByEmail } from "../../../src/services/firebaseAdminService"
+import { ITask } from "../../src/@types"
+import { deleteTask, getAllTasks } from "../../src/models/taskModel"
+import { getUserByEmail } from "../../src/services/firebaseAdminService"
 import { userCreateDataFactory } from "./UserFactory"
 
 export const taskCreateDataFactory: Omit<ITask, "id"> = {
