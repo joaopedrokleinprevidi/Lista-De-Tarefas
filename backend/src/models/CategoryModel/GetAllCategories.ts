@@ -1,5 +1,5 @@
 import { database } from "../../config/firebaseAccountService"
-import { ICategory, ICategoryModel } from "../../@types"
+import { ICategoryDto, ICategoryModel } from "../../@types"
 
 export const getAllCategories: ICategoryModel["getAllCategories"] = async ( userID ) => {
 
@@ -11,7 +11,7 @@ export const getAllCategories: ICategoryModel["getAllCategories"] = async ( user
             ...doc.data(),
         }))
 
-        return categories as ICategory[]
+        return categories as ICategoryDto[]
     }
 
     catch ( error: any ) {

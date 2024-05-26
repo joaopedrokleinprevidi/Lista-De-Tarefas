@@ -1,9 +1,9 @@
-import { ICategory } from "../domain"
+import { ICategoryCreate, ICategoryDto, ICategoryUpdate } from "../domain"
 
 export interface ICategoryModel {
-    createCategory: ( userID: string, category: Omit<ICategory, "id"> ) => Promise<ICategory>
+    createCategory: ( userID: string, category: ICategoryCreate ) => Promise<ICategoryDto>
     deleteCategory: ( userID: string, categoryID: string ) => Promise<void>
-    updateCategory: ( userID: string, categoryID: string, categoryUpdate: any ) => Promise<void>
-    getAllCategories: ( userID: string ) => Promise<ICategory[]>
-    getCategory: ( userID: string, categoryID: string ) => Promise<ICategory>
+    updateCategory: ( userID: string, categoryID: string, categoryUpdate: Partial<ICategoryUpdate> ) => Promise<void>
+    getAllCategories: ( userID: string ) => Promise<ICategoryDto[]>
+    getCategory: ( userID: string, categoryID: string ) => Promise<ICategoryDto>
 }

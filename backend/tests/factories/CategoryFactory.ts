@@ -1,12 +1,11 @@
-import { ICategory } from "../../src/@types"
+import { ICategoryCreate } from "../../src/@types"
 import { deleteCategory, getAllCategories } from "../../src/models/categoryModel"
 import { getUserByEmail } from "../../src/services/firebaseAdminService"
 import { userCreateDataFactory } from "./UserFactory"
 
-export const categoryCreateDataFactory: Omit<ICategory, "id"> = {
+export const categoryCreateDataFactory: ICategoryCreate = {
     name: "categoriaTeste",
-    color: "white",
-    tasks: []
+    color: "white"
 }
 
 export const deleteAllCategoriesFactory = async () => {

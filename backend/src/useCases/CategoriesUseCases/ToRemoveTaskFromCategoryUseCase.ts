@@ -6,9 +6,9 @@ export const ToRemoveTaskFromCategoryUseCase = ( CategoryModel: ICategoryModel )
 
         try {
             const category = await CategoryModel.getCategory(userID, categoryID)
-            const removeTaskFromCategory = category.tasks.filter( id => id !== taskID )
+            const removeTaskFromCategory = category.tasksIDs.filter( id => id !== taskID )
     
-            await CategoryModel.updateCategory(userID, categoryID, { tasks: removeTaskFromCategory })
+            await CategoryModel.updateCategory(userID, categoryID, { tasksIDs: removeTaskFromCategory })
         }
     
         catch ( error: any ) {

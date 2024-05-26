@@ -6,13 +6,13 @@ export const ToAssignTaskToCategoryUseCase = ( CategoryModel: ICategoryModel ) =
 
         try {
             const category = await CategoryModel.getCategory(userID, categoryID)
-            const taskExists = category.tasks.includes(taskID)
+            const taskExists = category.tasksIDs.includes(taskID)
 
             if( taskExists ) throw new Error("Task já existe!") 
 
-            category.tasks.push(taskID)
+            category.tasksIDs.push(taskID)
 
-            await CategoryModel.updateCategory(userID, categoryID, { tasks: category.tasks })   
+            await CategoryModel.updateCategory(userID, categoryID, { tasksIDs: category.tasksIDs })   
         }
     
         catch ( error: any ) {

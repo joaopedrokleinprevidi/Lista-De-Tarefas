@@ -17,7 +17,7 @@ describe("CategoryModel > CreateCategory", () => {
             id: expect.any(String),
             name: categoryCreateDataFactory.name,
             color: categoryCreateDataFactory.color,
-            tasks: []
+            tasksIDs: []
         })
     })
 })
