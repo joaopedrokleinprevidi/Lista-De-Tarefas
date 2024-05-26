@@ -9,7 +9,7 @@ describe("CategoryModel > CreateCategory", () => {
         await deleteUserFactory()
     })
 
-    it("Deve criar uma categoria com sucesso", async () => {
+    it("Must create a category successfully", async () => {
         const user = await userFactory()
         const newCategory = await createCategory(user.uid, categoryCreateDataFactory)
 

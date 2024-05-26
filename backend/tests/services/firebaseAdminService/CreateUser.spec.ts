@@ -14,7 +14,7 @@ describe("FirebaseAdminService > CreateUser", () => {
         expect(user.email).toEqual(userCreateDataFactory.email)
     })
 
-    it("Should return an error if the email is already in use", async () => {
+    it("Must return an error if the email is already in use", async () => {
         await createUser(userCreateDataFactory.email, userCreateDataFactory.password)
 
         const user = () => createUser(userCreateDataFactory.email, userCreateDataFactory.password)

@@ -11,7 +11,7 @@ describe("TaskModel > CreateTask", () => {
 
     afterAll( async () => await deleteUserFactory()  )
 
-    it("Deve criar uma tarefa com sucesso", async () => {
+    it("Must create a task successfully", async () => {
         const taskCreate = taskCreateDataFactory
         const newTask = await createTask(user.uid, taskCreate)
         
