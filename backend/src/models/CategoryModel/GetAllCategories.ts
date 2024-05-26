@@ -5,6 +5,9 @@ import { retrieveCategoryData } from "./RetrieveCategoryData"
 export const getAllCategories: ICategoryModel["getAllCategories"] = async ( userID ) => {
     
     const categoriesSnapshot = await database.collection("Usuarios").doc(userID).collection("Categorias").get()
+
+    if( categoriesSnapshot.empty ) return []
+
     const retrieveCategoriesData = categoriesSnapshot.docs.map( categoryDoc => retrieveCategoryData(categoryDoc) )
 
     return await Promise.all(retrieveCategoriesData)
