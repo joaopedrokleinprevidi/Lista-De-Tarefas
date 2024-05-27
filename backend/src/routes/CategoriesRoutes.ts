@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { AuthUserMiddleware } from "../modules/middlewares/AuthUserMiddleware"
+import { AuthUserMiddleware } from "../modules/middlewares/UserMiddlewares"
 
 import {
     CreateCategoryController,

@@ -1,6 +1,10 @@
 import { Router } from "express"
-import { AuthUserMiddleware } from "../modules/middlewares/AuthUserMiddleware"
-import { ValidationTaskMiddleware,  ValidationUpdateTaskMiddleware } from "../modules/middlewares/ValidationMiddleware"
+import { AuthUserMiddleware } from "../modules/middlewares/UserMiddlewares"
+
+import {
+    ValidationUpdateTaskMiddleware,
+    ValidationTaskMiddleware
+} from "../modules/middlewares/ValidationMeddlewares"
 
 import {
     CheckAllTasksController,
