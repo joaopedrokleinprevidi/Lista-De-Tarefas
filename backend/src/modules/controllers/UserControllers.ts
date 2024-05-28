@@ -1,6 +1,6 @@
 import * as FirebaseAuthService from "../../services/firebaseAdminService"
-import * as UserControllersModule from "../../controllers/userControllers"
+import * as UserControllers from "../../controllers/userControllers"
 
-export const CreateUserController = UserControllersModule.CreateUserController(FirebaseAuthService)
-export const DeleteUserController = UserControllersModule.DeleteUserController(FirebaseAuthService)
-export const GetUserByEmailController = UserControllersModule.GetUserByEmailController(FirebaseAuthService)
+export const CreateUserController = UserControllers.CreateUserController(FirebaseAuthService)
+export const DeleteUserController = UserControllers.DeleteUserController(FirebaseAuthService)
+export const GetUserByEmailController = UserControllers.GetUserByEmailController(FirebaseAuthService)
