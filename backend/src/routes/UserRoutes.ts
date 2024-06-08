@@ -5,10 +5,10 @@ import { CreateUserController, DeleteUserController, GetUserByEmailController } 
 
 const userRoutes = Router() 
 
-userRoutes.post("/auth/signUp", ValidationRegisterMiddleware, CreateUserController)
+userRoutes.post("/signUp", ValidationRegisterMiddleware, CreateUserController)
 
-userRoutes.delete("/auth/deleteUser", AuthUserMiddleware, DeleteUserController)
+userRoutes.delete("/deleteUser", AuthUserMiddleware, DeleteUserController)
 
-userRoutes.get("/auth/getUser", AuthUserMiddleware, GetUserByEmailController)
+userRoutes.get("/getUser", AuthUserMiddleware, GetUserByEmailController)
 
 export default userRoutes

@@ -17,16 +17,16 @@ import {
 
 const taskRoutes = Router()
 
-taskRoutes.get("/tasks/getAll", AuthUserMiddleware, GetAllTasksController)
+taskRoutes.get("/getAll", AuthUserMiddleware, GetAllTasksController)
 
-taskRoutes.post("/tasks/create", CreateTaskController)
+taskRoutes.post("/create", CreateTaskController)
 
-taskRoutes.put("/tasks/update", AuthUserMiddleware, ValidationUpdateTaskMiddleware, UpdateTaskController)
+taskRoutes.put("/update", AuthUserMiddleware, ValidationUpdateTaskMiddleware, UpdateTaskController)
 
-taskRoutes.put("/tasks/checkAll", AuthUserMiddleware, ValidationTaskMiddleware, CheckAllTasksController)
+taskRoutes.put("/checkAll", AuthUserMiddleware, ValidationTaskMiddleware, CheckAllTasksController)
 
-taskRoutes.put("/tasks/uncheckAll", AuthUserMiddleware, ValidationTaskMiddleware, UncheckAllTasksController)
+taskRoutes.put("/uncheckAll", AuthUserMiddleware, ValidationTaskMiddleware, UncheckAllTasksController)
 
-taskRoutes.delete("/tasks/delete", AuthUserMiddleware, DeleteTaskController)
+taskRoutes.delete("/delete", AuthUserMiddleware, DeleteTaskController)
 
 export default taskRoutes

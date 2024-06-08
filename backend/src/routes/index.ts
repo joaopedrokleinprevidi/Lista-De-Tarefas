@@ -1,12 +1,12 @@
 import { Router } from "express"
-import categoriesRoutes from "./categoriesRoutes"
-import taskRoutes from "./taskRoutes"
-import userRoutes from "./userRoutes"
+import categoriesRoutes from "./CategoriesRoutes"
+import taskRoutes from "./TaskRoutes"
+import userRoutes from "./UserRoutes"
 
 const routes = Router()
 
-routes.use(categoriesRoutes)
-routes.use(taskRoutes)
-routes.use(userRoutes)
+routes.use("/categories", categoriesRoutes)
+routes.use("/tasks", taskRoutes)
+routes.use("/auth", userRoutes)
 
 export default routes

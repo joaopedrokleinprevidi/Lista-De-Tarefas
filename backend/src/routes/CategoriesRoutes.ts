@@ -13,18 +13,18 @@ import {
 
 const categoriesRoutes = Router() 
 
-categoriesRoutes.post("/categories/create", AuthUserMiddleware, CreateNewCategoryController)
+categoriesRoutes.post("/create", AuthUserMiddleware, CreateNewCategoryController)
 
-categoriesRoutes.delete("/categories/delete", AuthUserMiddleware, DeleteCategoryController)
+categoriesRoutes.delete("/delete", AuthUserMiddleware, DeleteCategoryController)
 
-categoriesRoutes.get("/categories/getAll", AuthUserMiddleware, GetAllCategoriesController)
+categoriesRoutes.get("/getAll", AuthUserMiddleware, GetAllCategoriesController)
 
-categoriesRoutes.get("/categories/get", AuthUserMiddleware, GetCategoryController)
+categoriesRoutes.get("/get", AuthUserMiddleware, GetCategoryController)
 
-categoriesRoutes.put("/categories/assignTaskToCategory", AuthUserMiddleware, AssignCategoryToTaskController)
+categoriesRoutes.put("/assignTaskToCategory", AuthUserMiddleware, AssignCategoryToTaskController)
 
-categoriesRoutes.put("/categories/removeTaskFromCategory", AuthUserMiddleware, RemoveTaskFromCategoryController)
+categoriesRoutes.put("/removeTaskFromCategory", AuthUserMiddleware, RemoveTaskFromCategoryController)
 
-categoriesRoutes.put("/categories/update", AuthUserMiddleware, UpdateCategoryController)
+categoriesRoutes.put("/update", AuthUserMiddleware, UpdateCategoryController)
 
 export default categoriesRoutes
