@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express" 
 import { IUserService } from "../@types"
+import { UnhandledError } from "../errors/ApplicationError"
 
 export const AuthUserMiddleware = ( UserService: IUserService ) => {
 
@@ -8,11 +9,13 @@ export const AuthUserMiddleware = ( UserService: IUserService ) => {
         try {
             const authHeader = request.headers.authorization
 
-            if ( !authHeader ) throw new Error("Token não informado") 
+            if ( !authHeader ) throw new UnhandledError("Token not provided.") 
 
             const token = authHeader.split(" ")[1]
 
             await UserService.authUser(token)
+
+            next()
         }
 
         catch ( error: any ) {
