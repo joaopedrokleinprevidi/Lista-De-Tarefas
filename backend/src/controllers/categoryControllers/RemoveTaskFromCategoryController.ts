@@ -1,14 +1,14 @@
 import { Request, Response } from "express"
-import { IToRemoveTaskFromCategoryUseCase } from "../../@types"
+import { IRemoveTaskFromCategoryUseCase } from "../../@types"
 
-export const ToRemoveTaskFromCategoryController = ( ToRemoveTaskFromCategory: IToRemoveTaskFromCategoryUseCase ) => {
+export const RemoveTaskFromCategoryController = ( RemoveTaskFromCategory: IRemoveTaskFromCategoryUseCase ) => {
     
     const execute = async ( request: Request, response: Response ) => {
 
         try {
             const { userID, categoryID, taskID } = request.body
             
-            await ToRemoveTaskFromCategory(userID, categoryID, taskID)
+            await RemoveTaskFromCategory(userID, categoryID, taskID)
 
             response.status(200).json({ message: "Task successfully removed from category." })
         }

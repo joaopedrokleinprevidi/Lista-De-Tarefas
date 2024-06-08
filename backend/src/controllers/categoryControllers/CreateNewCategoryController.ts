@@ -1,14 +1,14 @@
 import { Request, Response } from "express"
-import { ICategoryModel } from "../../@types"
+import { ICreateNewCategoryUseCase } from "../../@types"
 
-export const CreateCategoryController = ( CategoryModel: ICategoryModel ) => {
+export const CreateNewCategoryController = ( CreateNewCategoryUseCase: ICreateNewCategoryUseCase ) => {
     
     const execute = async ( request: Request, response: Response ) => {
 
         try {
             const { userID, category } = request.body
 
-            await CategoryModel.createCategory(userID, category)
+            await CreateNewCategoryUseCase(userID, category)
 
             response.status(201).json({ message: "Category created successfully." })
         }

@@ -2,18 +2,18 @@ import { Router } from "express"
 import { AuthUserMiddleware } from "../modules/middlewares/UserMiddlewares"
 
 import {
-    CreateCategoryController,
+    CreateNewCategoryController,
     DeleteCategoryController,
-    GetAllCategoriesController,
-    ToAssignTaskToCategoryController,
-    ToRemoveTaskFromCategoryController,
     GetCategoryController,
-    updateCategory
+    GetAllCategoriesController,
+    UpdateCategoryController,
+    AssignCategoryToTaskController,
+    RemoveTaskFromCategoryController
 } from "../modules/controllers/CategoriesControllers"
 
 const categoriesRoutes = Router() 
 
-categoriesRoutes.post("/categories/create", AuthUserMiddleware, CreateCategoryController)
+categoriesRoutes.post("/categories/create", AuthUserMiddleware, CreateNewCategoryController)
 
 categoriesRoutes.delete("/categories/delete", AuthUserMiddleware, DeleteCategoryController)
 
@@ -21,10 +21,10 @@ categoriesRoutes.get("/categories/getAll", AuthUserMiddleware, GetAllCategoriesC
 
 categoriesRoutes.get("/categories/get", AuthUserMiddleware, GetCategoryController)
 
-categoriesRoutes.put("/categories/assignTaskToCategory", AuthUserMiddleware, ToAssignTaskToCategoryController)
+categoriesRoutes.put("/categories/assignTaskToCategory", AuthUserMiddleware, AssignCategoryToTaskController)
 
-categoriesRoutes.put("/categories/removeTaskFromCategory", AuthUserMiddleware, ToRemoveTaskFromCategoryController)
+categoriesRoutes.put("/categories/removeTaskFromCategory", AuthUserMiddleware, RemoveTaskFromCategoryController)
 
-categoriesRoutes.put("/categories/update", AuthUserMiddleware, updateCategory)
+categoriesRoutes.put("/categories/update", AuthUserMiddleware, UpdateCategoryController)
 
 export default categoriesRoutes
