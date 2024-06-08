@@ -2,11 +2,12 @@ import * as CategoryModel from "../../models/categoryModel"
 import * as CategoriesControllers from "../../controllers/categoryControllers"
 
 import {
+    CreateNewCategoryUseCase,
     AssignCategoryToTaskUseCase,
     RemoveTaskFromCategoryUseCase
 } from "../useCases/CategoriesUseCases"
 
-export const CreateCategoryController = CategoriesControllers.CreateCategoryController(CategoryModel)
+export const CreateNewCategoryController = CategoriesControllers.CreateNewCategoryController(CreateNewCategoryUseCase)
 export const DeleteCategoryController = CategoriesControllers.DeleteCategoryController(CategoryModel)
 export const GetCategoryController = CategoriesControllers.GetCategoryController(CategoryModel)
 export const GetAllCategoriesController = CategoriesControllers.GetAllCategoriesController(CategoryModel)
