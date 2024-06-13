@@ -5,16 +5,10 @@ export const GetUserByEmailController = ( UserService: IUserService ) => {
 
     const execute = async ( request: Request, response: Response ) => {
 
-        try {
-            const { email } = request.body
-            const user = await UserService.getUserByEmail(email)
+        const { email } = request.body
+        const user = await UserService.getUserByEmail(email)
 
-            response.status(200).json(user)
-        }
-    
-        catch ( error: any ) {
-            throw new Error(error)
-        }
+        response.status(200).json(user)
     }
 
     return execute

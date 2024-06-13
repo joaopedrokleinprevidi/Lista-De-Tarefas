@@ -6,21 +6,15 @@ export const AuthUserMiddleware = ( UserService: IUserService ) => {
 
     const execute = async ( request: Request, response: Response, next: NextFunction ) => {
       
-        try {
-            const authHeader = request.headers.authorization
+        const authHeader = request.headers.authorization
 
-            if ( !authHeader ) throw new UnhandledError("Token not provided.") 
+        if ( !authHeader ) throw new UnhandledError("Token not provided.") 
 
-            const token = authHeader.split(" ")[1]
+        const token = authHeader.split(" ")[1]
 
-            await UserService.authUser(token)
+        await UserService.authUser(token)
 
-            next()
-        }
-
-        catch ( error: any ) {
-            response.status(500).json(error)
-        }
+        next()
     }
 
     return execute

@@ -5,16 +5,10 @@ export const UncheckAllTasksController = ( UpdateTaskCheckedStatusUseCase: IUpda
         
     const execute = async ( request: Request, response: Response ) => {
         
-        try {
-            const { userID } = request.body
-            const tasks = await UpdateTaskCheckedStatusUseCase(userID, false)
-    
-            response.status(200).json(tasks)
-        }
-    
-        catch ( error: any ) {
-            response.status(500).json(error)
-        }
+        const { userID } = request.body
+        const tasks = await UpdateTaskCheckedStatusUseCase(userID, false)
+
+        response.status(200).json(tasks)
     }
 
     return execute

@@ -5,17 +5,11 @@ export const CreateNewCategoryController = ( CreateNewCategoryUseCase: ICreateNe
     
     const execute = async ( request: Request, response: Response ) => {
 
-        try {
-            const { userID, category } = request.body
+        const { userID, category } = request.body
 
-            await CreateNewCategoryUseCase(userID, category)
+        await CreateNewCategoryUseCase(userID, category)
 
-            response.status(201).json({ message: "Category created successfully." })
-        }
-    
-        catch ( error: any ) {
-            response.status(500).json(error)
-        }
+        response.status(201).json({ message: "Category created successfully." })
     }
 
     return execute

@@ -5,18 +5,11 @@ export const CreateTaskController = ( TaskModel: ITaskModel ) => {
 
     const execute = async ( request: Request, response: Response ) => {
 
-        try {
-            const { userID, task } = request.body
+        const { userID, task } = request.body
 
-            await TaskModel.createTask(userID, task)
+        await TaskModel.createTask(userID, task)
 
-            response.status(201).json({ message: "Task created successfully." })
-        }
-    
-        catch ( error: any ) {
-            console.log(error.message)
-            response.status(500).json(error)
-        }
+        response.status(201).json({ message: "Task created successfully." })
     }
 
     return execute
