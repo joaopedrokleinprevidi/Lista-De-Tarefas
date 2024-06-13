@@ -1,18 +1,20 @@
-export class UserServiceError extends Error {
-    public name: string
+import { HttpsRequestError } from "./HttpsRequestError"
+import { CONFLICT_CODE } from "./statusCodeHttps"
 
-    constructor( name: string, message: string ) {
+export class UserServiceError extends HttpsRequestError {
+    constructor( message: string ) {
         super(message)
-
-        this.name = name || "UserServiceError"
     }
+
+    get name() { return "UserServiceError" }
 }
 
 export class EmailAlreadyExistsError extends UserServiceError {
     constructor() {
-        const name = "EmailAlreadyExistsError"
-        const message = "The previus email is already in use."
-
-        super(name, message)
+        super("The previus email is already in use.")
     }
+
+    get name() { return "EmailAlreadyExistsError" }
+
+    get statusCode() { return CONFLICT_CODE }
 }
