@@ -1,6 +1,6 @@
-import { createCategory } from "../../../src/models/categoryModel"
-import { categoryCreateDataFactory, deleteAllCategoriesFactory } from "../../factories/CategoryFactory"
-import { deleteUserFactory, userFactory } from "../../factories/UserFactory"
+import { createCategory } from "../../../../src/models/categoryModel"
+import { categoryCreateDataFactory, deleteAllCategoriesFactory } from "../../../factories/CategoryFactory"
+import { deleteUserFactory, userFactory } from "../../../factories/UserFactory"
 
 describe("CategoryModel > CreateCategory", () => {
     

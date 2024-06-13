@@ -1,7 +1,7 @@
-import { createCategory, getAllCategories } from "../../../src/models/categoryModel"
-import { categoryCreateDataFactory, deleteAllCategoriesFactory } from "../../factories/CategoryFactory"
-import { deleteUserFactory, userFactory } from "../../factories/UserFactory"
-import { IUser } from "../../../src/@types/domain/User"
+import { createCategory, getAllCategories } from "../../../../src/models/categoryModel"
+import { categoryCreateDataFactory, deleteAllCategoriesFactory } from "../../../factories/CategoryFactory"
+import { deleteUserFactory, userFactory } from "../../../factories/UserFactory"
+import { IUser } from "../../../../src/@types/domain/User"
 
 const createCategoriesFactory = async ( user: IUser ) => {
 

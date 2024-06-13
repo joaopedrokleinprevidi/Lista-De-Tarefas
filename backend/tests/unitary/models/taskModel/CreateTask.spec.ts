@@ -1,6 +1,6 @@
-import { createTask } from "../../../src/models/taskModel"
-import { deleteAllTasksFactory, taskCreateDataFactory } from "../../factories/TaskFactory"
-import { deleteUserFactory, userFactory } from "../../factories/UserFactory"
+import { createTask } from "../../../../src/models/taskModel"
+import { deleteAllTasksFactory, taskCreateDataFactory } from "../../../factories/TaskFactory"
+import { deleteUserFactory, userFactory } from "../../../factories/UserFactory"
 
 describe("TaskModel > CreateTask", () => {
     let user: { uid: string }

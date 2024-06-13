@@ -1,7 +1,7 @@
-import { IUser } from "../../../src/@types/domain/User"
-import { createCategory, filterCategory } from "../../../src/models/categoryModel"
-import { categoryCreateDataFactory, deleteAllCategoriesFactory } from "../../factories/CategoryFactory"
-import { deleteUserFactory, userFactory } from "../../factories/UserFactory"
+import { IUser } from "../../../../src/@types/domain/User"
+import { createCategory, filterCategory } from "../../../../src/models/categoryModel"
+import { categoryCreateDataFactory, deleteAllCategoriesFactory } from "../../../factories/CategoryFactory"
+import { deleteUserFactory, userFactory } from "../../../factories/UserFactory"
 
 const createCategoriesFactory = async ( user: IUser ) => {
     await Promise.all([
