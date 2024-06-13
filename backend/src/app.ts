@@ -1,8 +1,10 @@
 import "./config/firebaseAccountService"
+import "express-async-errors"
 
 import express from "express"
 import cors from "cors"
 import routes from "./routes"
+import { ErrorHandlerMiddleware } from "./middlewares/ErrorHandlerMiddleware"
 
 const app = express()
 
@@ -16,5 +18,7 @@ app.use( cors({
 }))
 
 app.use(routes)
+
+app.use(ErrorHandlerMiddleware)
 
 export default app
