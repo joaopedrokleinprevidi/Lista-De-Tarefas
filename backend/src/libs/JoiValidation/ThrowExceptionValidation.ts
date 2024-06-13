@@ -1,5 +1,7 @@
+import { InvalidFieldsError } from "../../errors/ValidationErrors"
+
 export const throwExceptionValidation = ( error: any ) => {
-    const errors = error?.details?.map(( detail: any ) => detail.message + " ")
+    const fieldErrors = error?.details?.map(( detail: any ) => detail.message + " ")
     
-    throw errors
+    throw new InvalidFieldsError(fieldErrors)
 }
